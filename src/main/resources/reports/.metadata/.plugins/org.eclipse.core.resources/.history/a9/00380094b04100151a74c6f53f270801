@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2015-08-13T14:43:55 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pokaz_1" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9dcecd07-c4da-45e4-9e2e-d4e14b4a0f5a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Excel"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="energy" class="java.lang.Integer"/>
+	<field name="date" class="java.util.Date"/>
+	<field name="energy2" class="java.lang.Integer"/>
+	<field name="date2" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="b3a8264a-ac31-4513-a5a0-2186aaf00fc1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Показання лічильника № 70013953 модель "СО-5000 (5)"]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="500" splitType="Stretch">
+			<multiAxisChart>
+				<chart customizerClass="nik.heatsupply.customizers.DateCustomizer">
+					<reportElement positionType="Float" x="0" y="0" width="555" height="275" uuid="055535fd-d0e0-4b9c-91a1-77ff8a82f562"/>
+					<chartTitle>
+						<font fontName="Times New Roman" size="14" pdfFontName="Times New Roman" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend position="Top"/>
+				</chart>
+				<multiAxisPlot>
+					<plot/>
+					<axis>
+						<timeSeriesChart>
+							<chart>
+								<reportElement x="0" y="0" width="0" height="0" backcolor="#FFFFFF" uuid="41da8c80-303f-4e3c-bcf9-9773fa593d60"/>
+								<chartTitle color="#000000">
+									<font fontName="Times New Roman" size="14" pdfFontName="Times New Roman" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+								</chartTitle>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF" position="Top"/>
+							</chart>
+							<timeSeriesDataset>
+								<timeSeries>
+									<seriesExpression><![CDATA["Лінія споживання"]]></seriesExpression>
+									<timePeriodExpression><![CDATA[$F{date}]]></timePeriodExpression>
+									<valueExpression><![CDATA[$F{energy}]]></valueExpression>
+								</timeSeries>
+							</timeSeriesDataset>
+							<timeSeriesPlot>
+								<plot/>
+								<timeAxisFormat>
+									<axisFormat/>
+								</timeAxisFormat>
+								<valueAxisFormat>
+									<axisFormat/>
+								</valueAxisFormat>
+							</timeSeriesPlot>
+						</timeSeriesChart>
+					</axis>
+					<axis>
+						<timeSeriesChart>
+							<chart>
+								<reportElement x="0" y="0" width="0" height="0" backcolor="#FFFFFF" uuid="375b0d3e-7fdd-4ba2-ba7f-59740f9fa950"/>
+								<chartTitle color="#000000">
+									<font fontName="Times New Roman" size="14" pdfFontName="Times New Roman" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+								</chartTitle>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF" position="Top"/>
+							</chart>
+							<timeSeriesDataset>
+								<timeSeries>
+									<seriesExpression><![CDATA["Враховані (контр.)"]]></seriesExpression>
+									<timePeriodExpression><![CDATA[$F{date2}]]></timePeriodExpression>
+									<valueExpression><![CDATA[$F{energy2}]]></valueExpression>
+								</timeSeries>
+							</timeSeriesDataset>
+							<timeSeriesPlot>
+								<plot/>
+								<timeAxisFormat>
+									<axisFormat/>
+								</timeAxisFormat>
+								<valueAxisFormat>
+									<axisFormat/>
+								</valueAxisFormat>
+							</timeSeriesPlot>
+						</timeSeriesChart>
+					</axis>
+				</multiAxisPlot>
+			</multiAxisChart>
+		</band>
+	</summary>
+</jasperReport>

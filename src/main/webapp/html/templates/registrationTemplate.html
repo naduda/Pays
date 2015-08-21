@@ -1,0 +1,38 @@
+<form>
+	<table>
+		<tr class="spaceUnder">
+			<td class="bold"><span id="${keyLogin}"></span></td>
+			<td>
+				<input id="rfI_1" type="text" name="login" placeholder="login" class="canSelect" autocomplete="off" required>
+			</td>
+		</tr>
+		<tr class="spaceUnder">
+			<td class="bold"><span id="${kUser}"></span></td>
+			<td>
+				<input id="rfI_2" type="text" name="name" placeholder="name" class="canSelect" autocomplete="off" required>
+			</td>
+		</tr>
+		<tr class="spaceUnder">
+			<td class="bold"><span id="${kPassword}"></span></td>
+			<td>
+				<input id="rfI_3" type="password" name="password" placeholder="password" class="canSelect" autocomplete="off" required>
+			</td>
+		</tr>
+		<tr class="spaceUnder">
+			<td class="bold"><span id="${kPassword2}"></span></td>
+			<td>
+				<input id="rfI_4" type="password" name="password2" placeholder="repeat password" class="canSelect" autocomplete="off" required>
+			</td>
+		</tr>
+		<tr class="spaceUnder">
+			<td class="bold"><span id="${kEmail}"></span></td>
+			<td>
+				<input id="rfI_5" type="email" name="email" placeholder="address@domain.xyz" class="canSelect" autocomplete="off" required>
+			</td>
+		</tr>
+		<tr style="height:25px;"></tr>
+	</table>
+	<button id="btnHide" ng-click="submit();" class="isHide"></button>
+</form>
+<button ng-click="submit();"><span id="${kRegister}"></span></button>
+<span id="error" class="comment"></span>

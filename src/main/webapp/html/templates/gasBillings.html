@@ -1,0 +1,46 @@
+<div>
+	<table class="cTable">
+		<tr>
+			<th>Last Month</th>
+			<th>Last Value</th>
+			<th>Current Month</th>
+			<th>Current Value</th>
+		</tr>
+		<tr>
+			<td>
+				<span id="dtBeg">{{dataDTbeg}}</span>
+			</td>
+			<td>
+				<span id="valBeg">{{dataValBeg}}</span>
+			</td>
+			<td>
+				<input id="dtEnd" type="text" size="10" readonly>
+			</td>
+			<td>
+				<input id="valEnd" type="text" value="{{dataValEnd}}" size="10" class="canSelect">
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<button id="btnAddData" ng-click="addGasBilling();"><span id="${kApply}"></button>
+	<br><br><hr>
+	<div>
+		<div><input id="showHistory" type="checkbox" ng-model="isShowHistory" ng-change="getDataHistory();">History</div>
+		<br><br>
+		<div id="tHistory" class="cTable">
+			<table>
+				<tr>
+					<th>Date</th>
+					<th>Value</th>
+					<th></th><th></th>
+				</tr>
+				<tr ng-repeat="data in dataList | orderBy:'-dt'">
+					<td>{{data.dt}}</td>
+					<td>{{data.value1}}</td>
+					<td><button ng-click="editData($event);">Edit</button></td>
+					<td><button ng-click="deleteData($event);">Delete</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

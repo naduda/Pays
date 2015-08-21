@@ -1,0 +1,144 @@
+<div class="container content">
+	<div id="tabsExample" class="tabs">
+		<ul class="nav nav-tabs">
+			<li id="l_tab1" class="pointer active">
+				<a ng-click="clickTab($event);">Електроенергія</a>
+			</li>
+			<li id="l_tab2" class="pointer">
+				<a ng-click="clickTab($event);">Теплоенергія</a>
+			</li>
+			<li id="l_tab3" class="pointer">
+				<a ng-click="clickTab($event);">Messages</a>
+			</li>
+			<li id="l_tab4" class="pointer">
+				<a ng-click="clickTab($event);">Settings</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div class="tab-pane content active" id="tab1">
+				<ul>
+					<li><a href="">Тарифи 1</a></li>
+					<li><a href="">Оплата 1</a></li>
+					<li><a href="">Нові приєднання 1</a></li>
+					<li><a href="">Підтримка клієнтів 1</a></li>
+					<li><a href="">Енергоефективність 1</a></li>
+					<li><a href="">Інфоцентр 1</a></li>
+				</ul>
+			</div>
+			<div class="tab-pane content" id="tab2">
+				<ul>
+					<li><a href="">Тарифи 2</a></li>
+					<li><a href="">Оплата 2</a></li>
+					<li><a href="">Нові приєднання 2</a></li>
+					<li><a href="">Підтримка клієнтів 2</a></li>
+					<li><a href="">Енергоефективність 2</a></li>
+					<li><a href="">Інфоцентр 2</a></li>
+				</ul>
+			</div>
+			<div class="tab-pane content" id="tab3">messages...</div>
+			<div class="tab-pane content" id="tab4">settings...</div>
+		</div>
+	</div>
+
+	<div id="carouselTestWrapper" class="container">
+		<div id="carouselTest" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselTest" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselTest" data-slide-to="1"></li>
+				<li data-target="#carouselTest" data-slide-to="2"></li>
+			</ol>
+
+			<div class="carousel-inner">
+				<div class="item active">
+					<div class="col-sm-2 content"></div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content"></div>
+					<div class="carousel-caption">
+						First Carousel
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-sm-2 content"></div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content"></div>
+					<div class="carousel-caption">
+						Second Carousel
+					</div>
+				</div>
+				<div class="item">
+					<div class="col-sm-2 content"></div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content">
+						<a href="http://nik.net.ua/">
+							<img src="images/logo_nik.png" alt="...">
+						</a>
+					</div>
+					<div class="col-sm-2 content"></div>
+					<div class="carousel-caption">
+						Thred Carousel
+					</div>
+				</div>
+			</div>
+
+			<a class="left carousel-control pointer" ng-click="prevCarousel();">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control pointer" ng-click="nextCarousel();">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
+</div>

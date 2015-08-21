@@ -1,0 +1,25 @@
+#carouselTestWrapper{
+	position: absolute;
+	bottom: 35px
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img{
+		width: 100px;
+		margin: auto;
+}
+.carousel-inner{height: 120px;}
+.carousel{background-color: #ddd;}
+.carousel-caption{top: 75px; color: red;}
+.caption{bottom: 0px;}
+.carousel-indicators{top: 80px;}
+
+#tabsExample{
+	background-color: #eee;
+	border-radius: 5px;
+}
+#tabsExample .tab-content{
+	min-height: 200px;
+	border: 2px solid #ddd;
+	border-radius: 0 0 5px 5px;
+}
+#tabsExample > ul > li[class*="active"] > a{background-color: #ddd;}

@@ -1,0 +1,37 @@
+<br>
+<div class="container content">
+	<form>
+		<table>
+			<tr class="spaceUnder">
+				<td class="bold"><span id="${keyLogin}"></span></td>
+				<td><input type="text" name="login" class="canSelect" required></td>
+			</tr>
+			<tr class="spaceUnder">
+				<td class="bold"><span id="${kUser}"></span></td>
+				<td><input type="text" name="user" class="canSelect" required></td>
+			</tr>
+			<tr class="spaceUnder">
+				<td class="bold"><span id="${kEmail}"></span></td>
+				<td><input type="email" name="email", class="canSelect" required></td>
+			</tr>
+			<tr class="spaceUnder">
+				<td></td>
+			</tr>
+			<tr class="spaceUnder">
+				<td class="bold"><span id="${kPassword}"></span></td>
+				<td><input type="password" name="pwd", class="canSelect" required></td>
+			</tr>
+			<tr class="spaceUnder">
+				<td class="bold"><span id="${kPassword1}"></span></td>
+				<td><input type="password" name="pwd1", class="canSelect" required></td>
+			</tr>
+			<tr class="spaceUnder">
+				<td class="bold"><span id="${kPassword2}"></span></td>
+				<td><input type="password" name="pwd2", class="canSelect" required></td>
+			</tr>
+		</table>
+		<button id="btnHide" ng-click="submitProfile();" class="isHide"></button>
+	</form>
+	<button ng-click="submitProfile();"><span id="${kApply}"></span></button>
+	<span id="error" class="comment"></span>
+</div>

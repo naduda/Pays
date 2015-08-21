@@ -1,0 +1,60 @@
+package nik.heatsupply.db.jdbc;
+
+import org.apache.ibatis.session.SqlSession;
+
+import nik.heatsupply.db.ConnectDB;
+
+public class BatisJDBC {
+	private static final int MAX_REPET = 3;
+	private IBatisJDBC iBatis;
+	private int count;
+	
+	public BatisJDBC(IBatisJDBC iBatis) {
+		this.iBatis = iBatis;
+	}
+
+	public Object get() {
+		while (count < MAX_REPET) {
+			SqlSession session = null;
+			try {
+				while(ConnectDB.getPostgressDB() == null) {
+					Thread.sleep(1000);
+				}
+				session = ConnectDB.getPostgressDB().getSqlSessionFactory().openSession(true);
+				try {
+					return iBatis.getResult(session);
+				} catch (Exception e) {
+					System.out.println("Error!!! (In BatisJDBC.class)");
+					e.printStackTrace();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("Reconnect!!! (In BatisJDBC.class)");
+				ConnectDB.setPostgressDB(null);
+			} finally {
+				if (session != null) session.close();
+			}
+			count++;
+		}
+		return null;
+	}
+	
+	public boolean run() {
+		while (count < MAX_REPET) {
+			SqlSession session = null;
+			try {
+				while(ConnectDB.getPostgressDB() == null) {
+					Thread.sleep(1000);
+				}
+				session = ConnectDB.getPostgressDB().getSqlSessionFactory().openSession(true);
+				iBatis.getResult(session);
+				return true;
+			} catch (Exception e) {
+			} finally {
+				if (session != null) session.close();
+			}
+			count++;
+		}
+		return false;
+	}
+}

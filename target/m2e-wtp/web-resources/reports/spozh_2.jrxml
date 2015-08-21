@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="spozh_2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6b4ceccb-f363-4d21-b6c8-210b89a722d9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="year" class="java.lang.Integer"/>
+	<field name="yValue" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" uuid="17b8a6a6-b7ce-4393-b9cd-658cf4d3bcb9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Споживання по роках]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="500" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="0" width="233" height="20" uuid="8a56eed0-97ad-4588-838d-e3f80e9c36bc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Загальне споживання: 22647 кВт·год]]></text>
+			</staticText>
+			<multiAxisChart>
+				<chart customizerClass="nik.heatsupply.customizers.Spozh2">
+					<reportElement x="0" y="20" width="555" height="300" uuid="3e649029-d687-4209-8472-f1add877bcc7"/>
+					<chartTitle>
+						<font fontName="Times New Roman" size="14" pdfFontName="Times New Roman" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<multiAxisPlot>
+					<plot/>
+					<axis>
+						<xyAreaChart>
+							<chart>
+								<reportElement x="0" y="0" width="0" height="0" backcolor="#FFFFFF" uuid="5c49a0c4-89a7-481d-9bb7-b8e2ef3ead6e"/>
+								<chartTitle color="#000000"/>
+								<chartSubtitle color="#000000"/>
+								<chartLegend textColor="#000000" backgroundColor="#FFFFFF"/>
+							</chart>
+							<xyDataset>
+								<xySeries>
+									<seriesExpression><![CDATA[""]]></seriesExpression>
+									<xValueExpression><![CDATA[$F{year}]]></xValueExpression>
+									<yValueExpression><![CDATA[$F{yValue}]]></yValueExpression>
+								</xySeries>
+							</xyDataset>
+							<areaPlot>
+								<plot/>
+								<categoryAxisFormat>
+									<axisFormat/>
+								</categoryAxisFormat>
+								<valueAxisFormat>
+									<axisFormat/>
+								</valueAxisFormat>
+							</areaPlot>
+						</xyAreaChart>
+					</axis>
+				</multiAxisPlot>
+			</multiAxisChart>
+		</band>
+	</summary>
+</jasperReport>

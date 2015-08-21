@@ -1,0 +1,13 @@
+iduser
+login
+password
+meternumber
+ownnumber
+lastpaydate
+lastpayvalue
+fio
+address
+email
+phone
+lastdateentry
+changepassworddate

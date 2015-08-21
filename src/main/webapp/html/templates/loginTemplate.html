@@ -1,0 +1,24 @@
+<form action="LoginServlet" method="post">
+	<table>
+		<tr class="spaceUnder">
+			<td class="bold"><span id="${kLogin}"></span></td>
+			<td>
+				<input type="text" name="user" value="admin" class="canSelect" required>
+			</td>
+		</tr>
+		<tr class="spaceUnder">
+			<td class="bold"><span id="${kPassword}"></span></td>
+			<td>
+				<input type="password" name="pwd", class="canSelect" required>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<button type="submit"><span id="${kLogin}"></span></button>
+	<a href=""><span id="${kRecover}"></span></a>
+</form>
+<button>
+	<a href="#registration" class="button">
+		<span id="${kRegister}"></span>
+	</a>
+</button>

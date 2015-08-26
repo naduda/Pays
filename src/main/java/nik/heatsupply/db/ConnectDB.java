@@ -58,6 +58,10 @@ public class ConnectDB {
 		return new BatisJDBC(s -> s.getMapper(IMapper.class).addData(dt, idTarif, idUser, value1, value2)).run();
 	}
 	
+	public static boolean updateData(Timestamp dt, Timestamp oldDT, int idTarif, int idUser, double value1, double value2) {
+		return new BatisJDBC(s -> s.getMapper(IMapper.class).updateData(dt, oldDT, idTarif, idUser, value1, value2)).run();
+	}
+	
 	public static boolean deleteData(int idUser,int idTarif, Timestamp dt) {
 		return new BatisJDBC(s -> s.getMapper(IMapper.class).deleteData(idUser, idTarif, dt)).run();
 	}

@@ -124,7 +124,34 @@ public class DataBase {
 				e.printStackTrace();
 			}
 			ret = j.build().toString();
-			break;		
+			break;
+		case "updatedata":
+			try {
+				String[] pars = params.split(";");
+				int idUser = Integer.parseInt(pars[0]);
+				int idTarif = Integer.parseInt(pars[1]);
+				Date dtd = df.parse(pars[2]);
+				Timestamp dt = new Timestamp(dtd.getTime());
+				double val1 = Double.parseDouble(pars[3]);
+				double val2 = Double.parseDouble(pars[4]);
+				Date olddtd = df.parse(pars[5]);
+				Timestamp olddt = new Timestamp(olddtd.getTime());
+				
+				if(ConnectDB.updateData(dt, olddt, idTarif, idUser, val1, val2)) {
+					j.add("message", "success")
+						.add("dt", df.format(dt))
+						.add("value1", val1 + "")
+						.add("value2", val2 + "")
+						.add("olddt", df.format(olddt));
+				} else {
+					j.add("message", "error");
+				}
+			} catch (NumberFormatException e) {
+				j.add("bad", "notok");
+				e.printStackTrace();
+			}
+			ret = j.build().toString();
+			break;
 		default: ret = "Get: > Comand <" + comand + "> not found"; break;
 		}
 		return ret;

@@ -14,6 +14,7 @@ tr.spaceUnder > td {padding-bottom: 5px;}
 .pointer{cursor: pointer;}
 .content{padding: 5px;}
 .inlineContent{padding-left: 3px}
+.modal-content{background-color: #eee}
 
 .menubutton{
 	background: linear-gradient(#D8D8D8, #d0d0d0);
@@ -103,3 +104,13 @@ a.button {text-decoration: none; color: initial;}
 .ui-datepicker-trigger{border:none;background:none;}
 
 #valEnd, #dtEnd{text-align: center;}
+
+#tHistory{
+	max-height: 107px;
+	overflow: auto;
+	margin: 20px;
+	padding: 10px;
+	border: gray;
+	border-style: double;
+	background-color: white;
+}

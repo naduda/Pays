@@ -48,4 +48,10 @@ public interface IMapper {
 			"(#{dt}, #{idtarif}, #{iduser}, #{value1}, #{value2})")
 	Integer addData(@Param("dt")Timestamp dt, @Param("idtarif")int idTarif, 
 			@Param("iduser")int idUser, @Param("value1")double value1, @Param("value2")double value2);
+	
+	@Update("update data set " +
+			"dt = #{dt}, value1 = #{value1}, value2 = #{value2} " +
+			"where iduser = #{iduser} and idtarif = #{idtarif} and dt = #{olddt}")
+	Integer updateData(@Param("dt")Timestamp dt, @Param("olddt")Timestamp oldDT, @Param("idtarif")int idTarif, 
+			@Param("iduser")int idUser, @Param("value1")double value1, @Param("value2")double value2);
 }

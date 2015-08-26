@@ -22,7 +22,7 @@ heatSupply.mainControllers
 				default: $scope.idTarif = 0; break;
 			}
 
-			fileUrl = 'html/templates/' + li.id + '.html';
+			fileUrl = 'html/templates/gasBillings.html';
 			$('#reportContent').load(fileUrl, function(){
 				$('#reportContent').html(
 					$compile($('#reportContent').html())($scope)
@@ -44,12 +44,13 @@ heatSupply.mainControllers
 							$scope.dataValEnd = 0;
 						else
 							$scope.dataValEnd = Number(data.value1) + 100;
-					})
+					});
+					if($scope.isShowHistory) $scope.getDataHistory();
 				});
 			});
 		}
 
-		$scope.editData = function (event){
+		$scope.editData = function(event){
 			var row = event.target.parentNode.parentNode,
 					dt, val, content, inDT, inVal;
 
@@ -59,9 +60,9 @@ heatSupply.mainControllers
 			content = $('<table width="100%" cellspacing="5"></table>');
 			inDT = $('<input type="text" value="' + dt +
 				'" size="10" class="inlineContent" readonly>');
-			inDT.datepicker({dateFormat: 'dd.mm.yy'});
-			inVal = '<input type="text" value="' + val +
-				'" size="10" class="inlineContent">';
+
+			inVal = $('<input type="text" value="' + val +
+				'" size="10" class="inlineContent">');
 			content.append('<tr>' +
 				'<td></td><td></td>' +
 			'</tr>');
@@ -71,8 +72,13 @@ heatSupply.mainControllers
 				size: BootstrapDialog.SIZE_SMALL,
 				title: 'Edit data',
 				message: content,
-				onshown: function(dialog) {
-					dialog.getModalBody().find('input').focus();
+				onshown: function(dialog){
+					inDT.datepicker({
+						showOn: 'button',
+						dateFormat: 'dd.mm.yy',
+						buttonText: "<i class='fa fa-calendar'></i>"
+					});
+					inVal.focus();
 				},
 				buttons: [{
 					icon: 'glyphicon glyphicon-send',
@@ -80,22 +86,19 @@ heatSupply.mainControllers
 					cssClass: 'menubutton',
 					autospin: true,
 					action: function(dialog){
-						// par.text = dialog.getModalBody().find('textarea').val();
-						// cm.parameters.push(par);
-
-						// dialog.enableButtons(false);
-						// model.webSocket.send(JSON.stringify(cm));
-						// $('.selectedAlarm').each(function() {
-						// 	$(this).removeClass('selectedAlarm');
-						// });
-						console.log('SENDED ' + dt + ' - ' + inDT.val());
+						updateData($scope.idTarif, inDT.val(), dt,
+													inVal.val(), 0, function(data){
+							console.log(data);
+							if(data.message === 'success'){
+								$scope.getDataHistory();
+							}
+						});
 						dialog.close();
 					}
 				}],
 				draggable: true,
 				closable: true
 			});
-
 		}
 
 		$scope.deleteData = function (event){
@@ -128,8 +131,30 @@ heatSupply.mainControllers
 			});
 		};
 
+		function updateData(idTarif, dt, oldDT, val1, val2, callback){
+			if(!$('#showHistory')[0].checked) return false;
+			$http({
+				method: 'GET',
+				url: '/Pays/dataServer/db/updateData?' + 
+							'params=' + hsFactory.userId + ';' + idTarif +
+							';' + dt + ';' + val1 + ';' + val2 + ';' + oldDT,
+				cache: false
+			})
+			.success(function(data){
+				if(callback) callback(data);
+			})
+			.error(function(data, status, headers, config){
+				console.log(status)
+			});
+		};
+
 		$scope.getDataHistory = function(){
 			console.log('CHANGE');
+			if($scope.isShowHistory)
+				$('#tHistory').removeClass('isHide');
+			else
+				$('#tHistory').addClass('isHide');
+
 			$('#tHistory table tr').each(function(r){
 				if(r > 0){
 					this.parentNode.removeChild(this);
@@ -149,10 +174,6 @@ heatSupply.mainControllers
 				console.log(status)
 			});
 		};
-
-		function addWaterBillings(){
-			console.log('addWaterBillings');
-		}
 
 		$scope.addGasBilling = function(){
 			var idTarif = $scope.idTarif,

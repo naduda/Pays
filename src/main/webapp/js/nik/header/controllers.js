@@ -53,12 +53,87 @@ heatSupply.headerControllers.controller('headerController',
 			$scope.locales = locales;
 		});
 
-		$scope.click = function($event){
+		$scope.changeLocaleClick = function($event){
 			var btn = document.getElementById('curLangButton'),
 					el = $event.target;
 
 			if(el.tagName.toLowerCase() !== 'li') el = el.parentNode;
 			changeLocale(el.id);
+		}
+
+		$scope.changeTarif = function(){
+			var dt, val, content, inDT, inVal;
+
+			content = $('<table width="100%" cellspacing="5"></table>');
+			inTarif = $('<select>' +
+				'<option>Water</option>' +
+				'<option>Gas</option>' +
+			'</select>');
+			inTarif.change(function(){
+				var idTarif = inTarif.find('option:selected').index() + 1;
+				hsFactory.getLastTarif(idTarif, function(data){
+					inVal.val(data.t1);
+					lastValue.html(
+						'Last val (date) = ' + data.t1 + ' (' + data.dt + ')'
+					);
+				});
+			});
+			lastValue = $('<span></span>');
+			inDT = $('<input type="text" value="' +
+				'" size="10" class="inlineContent" readonly>');
+			inVal = $('<input type="text" value="' +
+				'" size="10" class="inlineContent">');
+			content.append('<tr>' +
+				'<td></td><td></td><td></td><td></td>' +
+			'</tr>');
+			content.find('td').eq(0).append(inTarif);
+			content.find('td').eq(1).append(lastValue);
+			content.find('td').eq(2).append(inDT);
+			content.find('td').eq(3).append(inVal);
+
+			hsFactory.getLastTarif(1, function(data){
+				inVal.val(data.t1);
+				lastValue.html(
+					'Last val (date) = ' + data.t1 + ' (' + data.dt + ')'
+				);
+			});
+			BootstrapDialog.show({
+				size: BootstrapDialog.SIZE_NORMAL,
+				title: 'Change Tarif',
+				message: content,
+				onshown: function(dialog){
+					inDT.datepicker({
+						showOn: 'button',
+						dateFormat: 'dd.mm.yy',
+						buttonText: "<i class='fa fa-calendar'></i>"
+					});
+					var date = new Date(),
+							firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+					inDT.datepicker('setDate', firstDay);
+					inVal.focus();
+				},
+				buttons: [{
+					icon: 'glyphicon glyphicon-send',
+					label: '  Send',
+					cssClass: 'menubutton',
+					autospin: true,
+					action: function(dialog){
+						var idTarif = inTarif.find('option:selected').index() + 1;
+						hsFactory.setTarif(inDT.val(), idTarif, inVal.val(), 0,
+							function(data){
+								console.log(data);
+								if(data.message === 'success'){
+									alert('Tarif was added');
+								} else {
+									alert('Error');
+								}
+							});
+						dialog.close();
+					}
+				}],
+				draggable: true,
+				closable: true
+			});
 		}
 
 		function changeLocale(langId){
@@ -117,6 +192,9 @@ heatSupply.headerControllers.controller('headerController',
 					$('input[name="login"').val(data.login);
 					$('input[name="user"').val(data.name);
 					$('input[name="email"').val(data.email);
+					$('input[name="address"').val(data.address);
+					$('input[name="ownerAccount1"').val(data.ownerAccount1);
+					$('input[name="ownerAccount2"').val(data.ownerAccount2);
 				}
 			});
 

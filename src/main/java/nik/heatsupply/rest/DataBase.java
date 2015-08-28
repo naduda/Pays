@@ -23,6 +23,7 @@ import javax.ws.rs.core.MediaType;
 
 import nik.heatsupply.db.ConnectDB;
 import nik.heatsupply.socket.model.Data;
+import nik.heatsupply.socket.model.Tarif;
 
 @Path("/db")
 public class DataBase {
@@ -148,6 +149,37 @@ public class DataBase {
 				}
 			} catch (NumberFormatException e) {
 				j.add("bad", "notok");
+				e.printStackTrace();
+			}
+			ret = j.build().toString();
+			break;
+		case "getlasttarif":
+			try {
+				String[] pars = params.split(";");
+				int idTarif = Integer.parseInt(pars[0]);
+				Tarif t = ConnectDB.getLastTarif(idTarif);
+				j.add("dt", t == null ? "-" : df.format(t.getDt()))
+				 .add("t1", t == null ? 0 : t.getTarif1())
+				 .add("t2", t == null ? 0 : t.getTarif2());
+			} catch (NumberFormatException e) {
+				j.add("message", "error");
+				e.printStackTrace();
+			}
+			ret = j.build().toString();
+			break;
+		case "settarif":
+			try {
+				String[] pars = params.split(";");
+				Date dtd = df.parse(pars[0]);
+				Timestamp dt = new Timestamp(dtd.getTime());
+				int idTarif = Integer.parseInt(pars[1]);
+				double tarif1 = Double.parseDouble(pars[2]);
+				double tarif2 = Double.parseDouble(pars[3]);
+				if(ConnectDB.addTarif(dt, idTarif, tarif1, tarif2)) {
+					j.add("message", "success");
+				}
+			} catch (NumberFormatException e) {
+				j.add("message", "error");
 				e.printStackTrace();
 			}
 			ret = j.build().toString();

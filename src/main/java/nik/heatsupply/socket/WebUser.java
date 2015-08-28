@@ -2,11 +2,11 @@ package nik.heatsupply.socket;
 
 import javax.servlet.http.HttpSession;
 
-public class User {
+public class WebUser {
 	private int userId;
 	private HttpSession httpSession;
 	
-	public User(int userId, HttpSession httpSession) {
+	public WebUser(int userId, HttpSession httpSession) {
 		this.userId = userId;
 		this.httpSession = httpSession;
 	}

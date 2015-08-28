@@ -13,6 +13,7 @@ import nik.heatsupply.db.jdbc.PostgresDB;
 import nik.heatsupply.db.jdbc.mappers.IMapper;
 import nik.heatsupply.socket.Server;
 import nik.heatsupply.socket.model.Data;
+import nik.heatsupply.socket.model.Tarif;
 import nik.heatsupply.socket.model.User;
 
 public class ConnectDB {
@@ -31,18 +32,22 @@ public class ConnectDB {
 		return (User) new BatisJDBC(s -> s.getMapper(IMapper.class).getUserByLogin(userName)).get();
 	}
 	
-	public static boolean addUser(String userName, String login, String password, String email) {
+	public static boolean addUser(String userName, String address, String login, String password, String email, 
+			int ownerAccount1, int ownerAccount2) {
 		Encryptor encr = new Encryptor();
 		while(password.length() < 12) password += " ";
 		String passwordE = encr.encrypt(password);
-		return new BatisJDBC(s -> s.getMapper(IMapper.class).addUser(userName, login, passwordE, email)).run();
+		return new BatisJDBC(s -> s.getMapper(IMapper.class)
+				.addUser(userName, address, login, passwordE, email, ownerAccount1, ownerAccount2)).run();
 	}
 	
-	public static boolean updateUser(int idUser, String userName, String login, String password, String email) {
+	public static boolean updateUser(int idUser, String userName, String login, String password, String email,
+									String address, int ownerAccount1, int ownerAccount2) {
 		Encryptor encr = new Encryptor();
 		while(password.length() < 12) password += " ";
 		String passwordE = encr.encrypt(password);
-		return new BatisJDBC(s -> s.getMapper(IMapper.class).updateUser(idUser, userName, login, passwordE, email)).run();
+		return new BatisJDBC(s -> s.getMapper(IMapper.class)
+				.updateUser(idUser, userName, login, passwordE, email, address, ownerAccount1, ownerAccount2)).run();
 	}
 	
 	public static Data getDataByUserTarif(int idUser, int idTarif) {
@@ -62,8 +67,16 @@ public class ConnectDB {
 		return new BatisJDBC(s -> s.getMapper(IMapper.class).updateData(dt, oldDT, idTarif, idUser, value1, value2)).run();
 	}
 	
-	public static boolean deleteData(int idUser,int idTarif, Timestamp dt) {
+	public static boolean deleteData(int idUser, int idTarif, Timestamp dt) {
 		return new BatisJDBC(s -> s.getMapper(IMapper.class).deleteData(idUser, idTarif, dt)).run();
+	}
+	
+	public static Tarif getLastTarif(int idTarif) {
+		return (Tarif) new BatisJDBC(s -> s.getMapper(IMapper.class).getLastTarif(idTarif)).get();
+	}
+	
+	public static boolean addTarif(Timestamp dt, int idTarif, double tarif1, double tarif2) {
+		return new BatisJDBC(s -> s.getMapper(IMapper.class).addTarif(dt, idTarif, tarif1, tarif2)).run();
 	}
 
 	public static DataSource getDataSource() {

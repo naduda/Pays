@@ -1,11 +1,10 @@
 package nik.heatsupply.socket;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -22,16 +21,20 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
+import nik.heatsupply.common.CommonTools;
+import nik.heatsupply.db.ConnectDB;
 import nik.heatsupply.reports.Report;
 import nik.heatsupply.socket.messages.CommandMessage;
 import nik.heatsupply.socket.messages.Message;
 import nik.heatsupply.socket.messages.coders.MessageDecoder;
 import nik.heatsupply.socket.messages.coders.MessageEncoder;
+import nik.heatsupply.socket.model.Tarif;
+import nik.heatsupply.socket.model.User;
 
 @ServerEndpoint(value = "/socketServer", configurator = GetHttpSessionConfigurator.class,
 encoders = {MessageEncoder.class}, decoders = {MessageDecoder.class})
 public class Server {
-	private static final Map<Session, User> users = Collections.synchronizedMap(new HashMap<>());
+	private static final Map<Session, WebUser> users = Collections.synchronizedMap(new HashMap<>());
 
 	private void sender(Session ss) throws InterruptedException {
 		for (int i = 0; i < 10; i++) {
@@ -57,7 +60,7 @@ public class Server {
 
 		session.setMaxIdleTimeout(1000 * httpSession.getMaxInactiveInterval());
 		int userId = Integer.parseInt(httpSession.getAttribute("userId").toString());
-		users.put(session, new User(userId, httpSession));
+		users.put(session, new WebUser(userId, httpSession));
 		System.out.println("Socket connected - " + session.getId());
 		if(httpSession != null){
 			CommandMessage cm = new CommandMessage("user");
@@ -75,34 +78,47 @@ public class Server {
 			switch (cm.getCommand().toLowerCase()) {
 			case "getreport":
 				String reportName = cm.getParameters().get("reportName");
+				String userId = cm.getParameters().get("idUser");
+				String format = cm.getParameters().get("format").toLowerCase();
 				Report report = new Report();
-				report.setParameter("CHERRY_IMG", "images/cherry.jpg");
-				String reportContent = 
-						new String(report.create("/reports/", reportName + ".jrxml", "HTML").toByteArray(), StandardCharsets.UTF_8);
-				CommandMessage retMessage = new CommandMessage("reportHTML");
-				retMessage.setParameters("content", reportContent);
-				session.getBasicRemote().sendObject(retMessage);
-				break;
-			case "savereport":
-				reportName = cm.getParameters().get("reportName");
-				String ext = cm.getParameters().get("ext");
-
-				report = new Report();
-				report.setParameter("CHERRY_IMG", "images/cherry.jpg");
-				ByteArrayOutputStream reportContent4Save = report.create("/reports/", reportName + ".jrxml", ext);
-				File file = new File("d:/" + reportName + "_." + ext);
-				try(FileOutputStream fos = new FileOutputStream(file);){
-					if (!file.exists()) {
-						file.createNewFile();
-					}
-					fos.write(reportContent4Save.toByteArray());
-				} catch(Exception e){
-					e.printStackTrace();
+//				report.setParameter("CHERRY_IMG", "images/cherry.jpg");
+				if(reportName.equals("Water")) {
+					LocalDate dt = LocalDate.now();
+					int idUser = Integer.parseInt(userId);
+					User user = ConnectDB.getUser(idUser);
+					Tarif t1 = ConnectDB.getLastTarif(1);
+					Tarif t2 = ConnectDB.getLastTarif(2);
+					report.setParameter("prName", user.getUserName() + ", " + user.getAddress());
+					report.setParameter("prOwnerAccountWater", user.getOwneraccount1());
+					report.setParameter("prOwnerAccountGas", user.getOwneraccount2());
+					report.setParameter("prCurMonth", 
+							String.format("За %s %s р.",CommonTools.getMonth(dt.minusMonths(1).getMonthValue()), dt.getYear()));
+					report.setParameter("prTarifWater", t1 != null ? t1.getTarif1() : 0);
+					report.setParameter("prTarifGas", t2 != null ? t2.getTarif1() : 0);
 				}
 
-				retMessage = new CommandMessage("report4Save");
-				retMessage.setParameters("name", reportName + "." + ext.toLowerCase());
-				session.getBasicRemote().sendBinary(ByteBuffer.wrap(reportContent4Save.toByteArray()));
+				if(format.equals("html")) {
+					String reportContent = 
+							new String(report.create("/reports/", reportName + ".jrxml", "HTML").toByteArray(), StandardCharsets.UTF_8);
+					CommandMessage retMessage = new CommandMessage("reportHTML");
+					retMessage.setParameters("content", reportContent);
+					session.getBasicRemote().sendObject(retMessage);
+				} else {
+					ByteArrayOutputStream reportContent4Save = report.create("/reports/", reportName + ".jrxml", format);
+//					File file = new File("d:/" + reportName + "_." + format);
+//					try(FileOutputStream fos = new FileOutputStream(file);){
+//						if (!file.exists()) {
+//							file.createNewFile();
+//						}
+//						fos.write(reportContent4Save.toByteArray());
+//					} catch(Exception e){
+//						e.printStackTrace();
+//					}
+
+					CommandMessage retMessage = new CommandMessage("report4Save");
+					retMessage.setParameters("name", reportName + "." + format);
+					session.getBasicRemote().sendBinary(ByteBuffer.wrap(reportContent4Save.toByteArray()));
+				}
 				break;
 			default:
 				break;
@@ -121,7 +137,7 @@ public class Server {
 		System.out.println("Error - " + thr.getMessage());
 	}
 
-	public static Map<Session, User> getUsers() {
+	public static Map<Session, WebUser> getUsers() {
 		return users;
 	}
 	

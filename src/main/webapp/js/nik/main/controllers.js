@@ -29,6 +29,13 @@ heatSupply.mainControllers
 				);
 				translate.run(function(t){
 					t.translateAllByLocaleName(hsFactory.language);
+					if($scope.idTarif == 1){
+						$('#reportContent div span:first').removeClass('isHide');
+						$('#reportContent div span').eq(1).addClass('isHide');
+					} else {
+						$('#reportContent div span:first').addClass('isHide');
+						$('#reportContent div span').eq(1).removeClass('isHide');
+					}
 
 					$('#dtEnd').datepicker({
 						showOn: 'button',
@@ -56,7 +63,7 @@ heatSupply.mainControllers
 
 			dt = $(row).children('td').eq(0).html();
 			val = $(row).children('td').eq(1).html();
-			console.log('EDIT');
+
 			content = $('<table width="100%" cellspacing="5"></table>');
 			inDT = $('<input type="text" value="' + dt +
 				'" size="10" class="inlineContent" readonly>');
@@ -197,8 +204,9 @@ heatSupply.mainControllers
 			});
 		}
 
-		$scope.createReport = function($event){
+		$scope.createReport = function($event, format){
 			var li = $event.target;
+			heatSupply.currentReportExt = format;
 			while(li.tagName !== 'LI' && li.tagName !== 'BUTTON'){
 				li = li.parentNode;
 			}
@@ -210,21 +218,12 @@ heatSupply.mainControllers
 			heatSupply.currentReport = li.id;
 			heatSupply.socket.send(JSON.stringify({
 				'type': 'CommandMessage', 'command': 'getReport',
-				'parameters': [{'reportName' : li.id}]
+				'parameters': [{
+					'reportName' : li.getAttribute('report'),
+					'format': format,
+					'idUser': hsFactory.userId
+				}]
 			}));
-		}
-
-		$scope.saveAs = function($event){
-			var btn = $event.target;
-			if(btn){
-				heatSupply.currentReportExt = btn.id.slice(1);
-				heatSupply.socket.send(JSON.stringify({
-					'type': 'CommandMessage', 'command': 'saveReport',
-					'parameters': [
-						{'reportName': heatSupply.currentReport},
-						{'ext': btn.id.slice(1)}]
-				}));
-			}
 		}
 
 		heatSupply.initWebSocket(hsFactory.url);

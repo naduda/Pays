@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import nik.heatsupply.common.CommonTools;
 import nik.heatsupply.db.ConnectDB;
 
 @WebServlet("/RegisterServlet")
@@ -33,13 +34,17 @@ public class RegisterServlet extends HttpServlet {
 			}
 
 			String userName = request.getParameter("name");
+			String address = request.getParameter("address");
+			String ownerAccount1 = request.getParameter("ownerAccount1");
+			String ownerAccount2 = request.getParameter("ownerAccount2");
 			String login = request.getParameter("login");
 			String password = request.getParameter("password");
 			String password2 = request.getParameter("password2");
 			String email = request.getParameter("email");
 
 			if(password.equals(password2)) {
-				if(ConnectDB.addUser(userName, login, password, email)) {
+				if(ConnectDB.addUser(userName, address, login, password, email, 
+						CommonTools.toInt(ownerAccount1), CommonTools.toInt(ownerAccount2))) {
 					sendMessage(response, SUCCESS);
 				} else {
 					sendMessage(response, ERROR_LOGIN);

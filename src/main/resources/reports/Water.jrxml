@@ -10,9 +10,17 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
-	<property name="ireport.zoom" value="1.7715610000000044"/>
-	<property name="ireport.x" value="124"/>
-	<property name="ireport.y" value="902"/>
+	<property name="ireport.zoom" value="1.464100000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="480"/>
+	<parameter name="prName" class="java.lang.String">
+		<defaultValueExpression><![CDATA["admin"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="prOwnerAccountWater" class="java.lang.Integer"/>
+	<parameter name="prOwnerAccountGas" class="java.lang.Integer"/>
+	<parameter name="prCurMonth" class="java.lang.String"/>
+	<parameter name="prTarifWater" class="java.lang.Double"/>
+	<parameter name="prTarifGas" class="java.lang.Double"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -23,34 +31,34 @@
 		<band height="737" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 			<textField>
-				<reportElement x="0" y="0" width="85" height="22" uuid="213b0f86-4e98-4245-b00b-93122d951f28">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA["ПОВІДОМЛЕННЯ"]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="85" y="0" width="266" height="22" uuid="2ba25489-e9b5-4dea-9b62-588caaea2182">
+				<reportElement mode="Transparent" x="85" y="175" width="266" height="163" backcolor="#FFFFFF" uuid="22439f88-80cc-4ccd-82b4-2c28ab6bffa0">
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<box topPadding="5" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" isBold="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" isBold="true" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Комунальне підприємство \"Ірпіньводоканал\""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="0" width="266" height="163" uuid="2ba25489-e9b5-4dea-9b62-588caaea2182">
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" isBold="true" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Комунальне підприємство \"Ірпіньводоканал\""]]></textFieldExpression>
 			</textField>
@@ -58,29 +66,14 @@
 				<reportElement x="85" y="22" width="99" height="14" uuid="1d2b725b-d3d5-4ad9-8b6e-3e397cfab699"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Особистий рахунок"]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="85" y="36" width="266" height="19" uuid="e3880f43-2a52-42d6-9aed-26c92541c8c5">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Надуда Павло Романович, вул. В.Інтернаціоналістів 16-Б, кв.13"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="85" y="55" width="56" height="22" uuid="87f7a076-6996-4b49-bf12-9eac4e402132">
@@ -88,12 +81,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Показн.\nводоміра"]]></textFieldExpression>
 			</textField>
@@ -103,12 +96,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["К-сть\nчол."]]></textFieldExpression>
 			</textField>
@@ -118,12 +111,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Сума,\nгрн."]]></textFieldExpression>
 			</textField>
@@ -132,13 +125,14 @@
 					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Норма,\n1ч./міс"]]></textFieldExpression>
 			</textField>
@@ -149,12 +143,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Тариф,\nгрн."]]></textFieldExpression>
 			</textField>
@@ -164,28 +158,16 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["К-сть.\nкв.м."]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="184" y="22" width="85" height="14" uuid="4ca22ce6-b4e3-4ba4-9cdd-27801c21f768"/>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="10" isBold="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["129443"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="269" y="22" width="82" height="14" uuid="c4f9a8cf-5bea-4782-98de-619f1670bc9c">
@@ -193,12 +175,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["П.,І.,Б., адреса"]]></textFieldExpression>
 			</textField>
@@ -206,12 +188,12 @@
 				<reportElement x="85" y="77" width="56" height="11" uuid="cb500f60-06d3-42a2-834c-fd64c315a4a6"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Теперішній"]]></textFieldExpression>
@@ -220,12 +202,12 @@
 				<reportElement x="85" y="88" width="56" height="11" uuid="342fd112-afa3-4b3d-b1dd-bd22bd58cd96"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Попередній"]]></textFieldExpression>
@@ -234,12 +216,12 @@
 				<reportElement x="85" y="121" width="56" height="11" uuid="866d8735-7a6f-4119-9393-35f8529430f0"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Вода"]]></textFieldExpression>
@@ -248,12 +230,12 @@
 				<reportElement x="85" y="99" width="56" height="11" uuid="87c2fb2a-a8e1-4ef0-b9f5-3b56f96e8035"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Різниця"]]></textFieldExpression>
@@ -262,12 +244,12 @@
 				<reportElement x="85" y="110" width="56" height="11" uuid="6911b7d7-40a5-49fa-9709-166e58a7d6ef"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Каналізація"]]></textFieldExpression>
@@ -277,13 +259,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["241.00"]]></textFieldExpression>
 			</textField>
@@ -292,13 +275,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["235.00"]]></textFieldExpression>
 			</textField>
@@ -307,13 +291,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -322,13 +307,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["6.00"]]></textFieldExpression>
 			</textField>
@@ -337,30 +323,16 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="183" y="77" width="42" height="11" uuid="be7318bd-8a19-4805-830e-4f21396fb61d">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["14.77"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="183" y="88" width="42" height="11" uuid="d32ca5a1-98dc-40ab-8da4-8758eb31b0e1">
@@ -368,12 +340,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -383,12 +355,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -398,12 +370,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -413,12 +385,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -427,13 +399,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -442,13 +415,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -457,13 +431,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -472,13 +447,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -487,13 +463,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -503,12 +480,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -518,12 +495,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -533,12 +510,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -548,12 +525,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -563,12 +540,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -578,12 +555,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -593,12 +570,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -608,12 +585,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -623,12 +600,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -638,29 +615,28 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="85" y="132" width="98" height="17" uuid="be05d1dd-61cd-4e7f-8fd3-98e03b8708f4">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
+				<reportElement x="85" y="263" width="56" height="11" uuid="d20e2a76-301c-4c5a-b79d-b7e8f8a40df6"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA["За липень 2015 р."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Попередній"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="183" y="132" width="84" height="17" uuid="7d439c9c-b0d4-4f9f-a8a3-caeed4a1c8c1">
@@ -673,7 +649,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Пеня _______ грн."]]></textFieldExpression>
 			</textField>
@@ -688,7 +664,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="9" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Разом"]]></textFieldExpression>
 			</textField>
@@ -700,10 +676,10 @@
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="9" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["88.63"]]></textFieldExpression>
 			</textField>
@@ -711,55 +687,28 @@
 				<reportElement x="85" y="149" width="98" height="14" uuid="4f46fc41-16ac-462f-87b4-fb7b151d5dc7"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Підпис"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="183" y="149" width="168" height="14" uuid="61f1bf75-0628-45cd-8cc7-9c9ed31f1305"/>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<reportElement x="0" y="135" width="85" height="28" uuid="696cfdbf-dd1c-4626-ac5e-7d3bed9eb104">
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="5" rightPadding="1">
 					<topPen lineWidth="0.0" lineStyle="Solid"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="22" width="85" height="127" uuid="15cd8112-57f8-4d4f-9197-cb7f4c423c3a">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement>
-					<font fontName="Times New Roman" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="149" width="85" height="14" uuid="696cfdbf-dd1c-4626-ac5e-7d3bed9eb104">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Касир"]]></textFieldExpression>
@@ -770,12 +719,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -784,28 +733,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="197" width="85" height="127" uuid="acde91cf-485a-4307-8462-98aac48eb2f4">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement>
-					<font fontName="Times New Roman" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -815,12 +750,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Сума,\nгрн."]]></textFieldExpression>
 			</textField>
@@ -830,12 +765,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -845,30 +780,16 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["К-сть.\nкв.м."]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="85" y="211" width="266" height="19" uuid="fe97f70d-fdc7-467a-825d-8d25ae57259b">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Надуда Павло Романович, вул. В.Інтернаціоналістів 16-Б, кв.13"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="309" y="285" width="42" height="11" uuid="5efc0815-43b2-48ce-9e91-44ba7615fdee">
@@ -876,12 +797,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -891,12 +812,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["П.,І.,Б., адреса"]]></textFieldExpression>
 			</textField>
@@ -906,12 +827,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -921,28 +842,14 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Показн.\nводоміра"]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="85" y="263" width="56" height="11" uuid="d20e2a76-301c-4c5a-b79d-b7e8f8a40df6"/>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Попередній"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="309" y="263" width="42" height="11" uuid="339627f3-bfd2-4977-abb5-fa4c34aabe8c">
@@ -950,12 +857,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -964,13 +871,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -979,44 +887,16 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="85" y="175" width="266" height="22" uuid="22439f88-80cc-4ccd-82b4-2c28ab6bffa0">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" isBold="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Комунальне підприємство \"Ірпіньводоканал\""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="184" y="197" width="85" height="14" uuid="b2afdc33-13a5-4145-8c4f-17562874a9e5"/>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="10" isBold="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["129443"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="267" y="285" width="42" height="11" uuid="86b4c485-e741-4902-b0be-befb766c5b9a">
@@ -1024,12 +904,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1039,12 +919,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1053,26 +933,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="183" y="324" width="168" height="14" uuid="cbbc26a2-9e57-4ad6-9c8e-e94910d303e6"/>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1082,12 +950,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1097,12 +965,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1110,12 +978,12 @@
 				<reportElement x="85" y="274" width="56" height="11" uuid="7756f870-ec1e-42ad-b6f7-67159c11765f"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Різниця"]]></textFieldExpression>
@@ -1124,42 +992,28 @@
 				<reportElement x="85" y="197" width="99" height="14" uuid="ff6f3dc7-1dbf-4bff-bb19-915f8fda0587"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Особистий рахунок"]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="183" y="252" width="42" height="11" uuid="0d785551-9a79-4e9a-94a2-5d38403cc690">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["14.77"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="225" y="285" width="42" height="11" uuid="70b68d1b-f24b-4ccf-a10a-66fa715457bc">
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1168,31 +1022,16 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="175" width="85" height="22" uuid="908acf9f-50cb-46ba-9bf0-997f144f2318">
-					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA["КВИТАНЦІЯ"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="309" y="252" width="42" height="11" uuid="ce4d56ff-4163-4c9b-9550-092136ddaa8f">
@@ -1200,12 +1039,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1215,12 +1054,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1230,29 +1069,14 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="85" y="307" width="98" height="17" uuid="04a8b74a-afbc-46ef-9ddf-a00b408140ba">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["За липень 2015 р."]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="267" y="307" width="42" height="17" uuid="e042ac2a-1d8d-4097-9d85-6e14e3419fdb">
@@ -1265,7 +1089,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="9" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Разом"]]></textFieldExpression>
 			</textField>
@@ -1276,12 +1100,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Тариф,\nгрн."]]></textFieldExpression>
 			</textField>
@@ -1289,12 +1113,12 @@
 				<reportElement x="85" y="296" width="56" height="11" uuid="d1c07656-079f-4df4-9be4-a9873da1c97e"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Вода"]]></textFieldExpression>
@@ -1304,13 +1128,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["241.00"]]></textFieldExpression>
 			</textField>
@@ -1318,12 +1143,12 @@
 				<reportElement x="85" y="285" width="56" height="11" uuid="07d6a0e3-2442-430e-ac3d-ba5442f2f081"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Каналізація"]]></textFieldExpression>
@@ -1332,12 +1157,12 @@
 				<reportElement x="85" y="324" width="98" height="14" uuid="22391178-744b-41a1-99cc-52369f451bf0"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Підпис"]]></textFieldExpression>
 			</textField>
@@ -1347,27 +1172,27 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["К-сть\nчол."]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="324" width="85" height="14" uuid="8a0b5c5a-6702-4c44-ae05-ebb1a819cf4f">
+				<reportElement x="0" y="310" width="85" height="28" uuid="8a0b5c5a-6702-4c44-ae05-ebb1a819cf4f">
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+				<box topPadding="1" leftPadding="1" bottomPadding="5" rightPadding="1">
 					<topPen lineWidth="0.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Касир"]]></textFieldExpression>
@@ -1377,13 +1202,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1393,12 +1219,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1410,10 +1236,10 @@
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="9" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["88.63"]]></textFieldExpression>
 			</textField>
@@ -1422,13 +1248,14 @@
 					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Норма,\n1ч./міс"]]></textFieldExpression>
 			</textField>
@@ -1443,7 +1270,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Пеня _______ грн."]]></textFieldExpression>
 			</textField>
@@ -1451,12 +1278,12 @@
 				<reportElement x="85" y="252" width="56" height="11" uuid="a84a5b91-7440-43cd-b78c-d340a16f4ddc"/>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Теперішній"]]></textFieldExpression>
@@ -1466,13 +1293,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["6.00"]]></textFieldExpression>
 			</textField>
@@ -1481,13 +1309,14 @@
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["235.00"]]></textFieldExpression>
 			</textField>
@@ -1497,12 +1326,12 @@
 				</reportElement>
 				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="1.0" lineStyle="Solid"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1525,7 +1354,7 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["ПОВІДОМЛЕННЯ"]]></textFieldExpression>
@@ -1541,7 +1370,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement>
-					<font fontName="Times New Roman" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1556,7 +1385,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Касир"]]></textFieldExpression>
@@ -1572,7 +1401,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["ТОВ \"КИЇВОБЛГАЗ ЗБУТ\""]]></textFieldExpression>
 			</textField>
@@ -1585,7 +1414,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Установа банку АТ \"ОЩАДБАНК\""]]></textFieldExpression>
 			</textField>
@@ -1601,7 +1430,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Рахунок\nодержувача"]]></textFieldExpression>
 			</textField>
@@ -1614,7 +1443,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1627,7 +1456,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1640,7 +1469,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1656,7 +1485,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1671,7 +1500,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["26033300008084"]]></textFieldExpression>
 			</textField>
@@ -1684,7 +1513,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1697,7 +1526,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1710,7 +1539,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1726,7 +1555,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1741,7 +1570,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Особистий\nрахунок"]]></textFieldExpression>
 			</textField>
@@ -1754,7 +1583,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1767,7 +1596,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1782,7 +1611,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1797,41 +1626,10 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="true" isItalic="false" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["ЄДРПОУ 39592941 МФО 322669"]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="292" y="421" width="56" height="11" uuid="faffc7e3-a1c2-40b6-8959-fcb472a3da63">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["67539"]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="85" y="448" width="266" height="17" uuid="9d86b0a0-69d8-4b27-9206-65146f7f44bc">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Надуда Павло Романович, вул. В.Інтернаціоналістів 16-Б, кв.13"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="85" y="465" width="263" height="11" uuid="ded82466-4a95-41f5-82ae-64525104156b">
@@ -1844,7 +1642,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["прізвище, ім'я, по-батькові"]]></textFieldExpression>
@@ -1860,7 +1658,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -1875,7 +1673,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Вид платежу"]]></textFieldExpression>
@@ -1891,7 +1689,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Місяць"]]></textFieldExpression>
@@ -1907,7 +1705,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Сума"]]></textFieldExpression>
@@ -1923,26 +1721,10 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="169" y="487" width="98" height="11" uuid="c1fc7478-7d04-4360-9315-fdc4161acbb2">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA["За липень 2015 р."]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="267" y="487" width="81" height="11" uuid="2c768371-f4b9-4ea2-b79d-e7905b57a0c0">
@@ -1955,7 +1737,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -1971,7 +1753,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -1987,7 +1769,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -2003,7 +1785,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -2017,7 +1799,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -2033,7 +1815,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Показання лічильника"]]></textFieldExpression>
@@ -2049,7 +1831,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["м.куб."]]></textFieldExpression>
@@ -2066,7 +1848,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3450"]]></textFieldExpression>
@@ -2083,7 +1865,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3465"]]></textFieldExpression>
@@ -2100,7 +1882,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["15"]]></textFieldExpression>
@@ -2116,7 +1898,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="42"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Платник"]]></textFieldExpression>
@@ -2132,10 +1914,10 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Пеня"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Тариф"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="267" y="528" width="35" height="14" uuid="b0f886ce-a296-4fd9-8004-dc34fd55940e">
@@ -2149,26 +1931,10 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Усього"]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="302" y="514" width="46" height="14" uuid="7aced64a-175c-41d6-b14c-8004231d26a3">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="302" y="528" width="46" height="14" uuid="a92c6dfe-98ce-4d31-9f65-93d331fe47f0">
@@ -2182,7 +1948,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="9" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["107.82"]]></textFieldExpression>
@@ -2196,22 +1962,6 @@
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="302" y="688" width="46" height="14" uuid="cb80f826-bbfa-4294-9e6d-deff7571bedd">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
 				<reportElement x="219" y="590" width="22" height="5" uuid="121f412a-109a-4005-be8e-2ea715f78dcf">
 					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
@@ -2223,25 +1973,9 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="169" y="661" width="98" height="11" uuid="555896bb-287a-4e5a-90cc-f9e205a5bb5d">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA["За липень 2015 р."]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="267" y="672" width="81" height="11" uuid="8a231213-8d66-4456-b171-c4d9228481c0">
@@ -2254,7 +1988,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -2268,7 +2002,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2283,7 +2017,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Вид платежу"]]></textFieldExpression>
@@ -2299,7 +2033,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -2313,10 +2047,10 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Пеня"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Тариф"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="136" y="699" width="48" height="11" uuid="45abfb82-408c-4e30-b1fa-cfbb22382d7f">
@@ -2330,7 +2064,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3465"]]></textFieldExpression>
@@ -2346,7 +2080,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["прізвище, ім'я, по-батькові"]]></textFieldExpression>
@@ -2360,7 +2094,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2373,7 +2107,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2388,7 +2122,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement>
-					<font fontName="Times New Roman" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2403,7 +2137,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Місяць"]]></textFieldExpression>
@@ -2417,24 +2151,9 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="292" y="595" width="56" height="11" uuid="7a507cc0-19a0-4ea4-aca8-a06a5d286e12">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["67539"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="85" y="688" width="99" height="11" uuid="d27e7ce3-f6d9-4809-ada7-d1dff433ba60">
@@ -2447,7 +2166,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Показання лічильника"]]></textFieldExpression>
@@ -2463,7 +2182,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["ЄДРПОУ 39592941 МФО 322669"]]></textFieldExpression>
@@ -2479,7 +2198,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Особистий\nрахунок"]]></textFieldExpression>
 			</textField>
@@ -2494,7 +2213,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -2510,7 +2229,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Сума"]]></textFieldExpression>
@@ -2527,7 +2246,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2540,7 +2259,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2555,7 +2274,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["м.куб."]]></textFieldExpression>
@@ -2571,7 +2290,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -2588,7 +2307,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Рахунок\nодержувача"]]></textFieldExpression>
 			</textField>
@@ -2604,7 +2323,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="9" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isItalic="true" isUnderline="true" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["107.82"]]></textFieldExpression>
@@ -2620,7 +2339,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2633,7 +2352,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Установа банку АТ \"ОЩАДБАНК\""]]></textFieldExpression>
 			</textField>
@@ -2649,7 +2368,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3450"]]></textFieldExpression>
@@ -2665,7 +2384,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["ТОВ \"КИЇВОБЛГАЗ ЗБУТ\""]]></textFieldExpression>
 			</textField>
@@ -2680,7 +2399,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="42"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Платник"]]></textFieldExpression>
@@ -2694,7 +2413,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2709,7 +2428,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Касир"]]></textFieldExpression>
@@ -2725,7 +2444,7 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["КВИТАНЦІЯ"]]></textFieldExpression>
@@ -2741,7 +2460,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="true" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["26033300008084"]]></textFieldExpression>
 			</textField>
@@ -2754,7 +2473,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2770,7 +2489,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Усього"]]></textFieldExpression>
@@ -2787,26 +2506,10 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="7" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5" rightIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA["15"]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="85" y="622" width="266" height="17" uuid="4d26fe2c-7def-49de-82ee-7f6824af82b9">
-					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
-				</reportElement>
-				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
-					<paragraph leftIndent="5"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Надуда Павло Романович, вул. В.Інтернаціоналістів 16-Б, кв.13"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="267" y="661" width="81" height="11" uuid="8f9b51ce-0434-40f3-ab3f-d92ffbaac4c9">
@@ -2819,7 +2522,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -2833,7 +2536,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
@@ -2847,7 +2550,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
 			</textField>
@@ -2862,9 +2565,207 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+					<font fontName="Times New Roman" size="6" isBold="false" isItalic="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="36" width="266" height="20" uuid="8204a3d7-f168-4435-b3bf-f3e5a2124062"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="211" width="266" height="20" uuid="bde4aebe-6496-48ad-9aff-ebaec9d896da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="0" y="0" width="85" height="163" uuid="213b0f86-4e98-4245-b00b-93122d951f28">
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ПОВІДОМЛЕННЯ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="175" width="85" height="163" uuid="908acf9f-50cb-46ba-9bf0-997f144f2318">
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="8" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["КВИТАНЦІЯ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="22" width="85" height="14" uuid="030d6388-b03b-46af-9fd0-d95f3c731db7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prOwnerAccountWater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="197" width="85" height="14" uuid="2481176a-35a8-4a19-a0c1-bda00bc8a06e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prOwnerAccountWater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="448" width="266" height="17" uuid="054c756c-89a1-45cf-b60f-c1f39d99933d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="622" width="266" height="17" uuid="7f079e33-85cd-4d8c-9bab-af1aaa4f2b79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="421" width="56" height="11" uuid="30dd4e67-415f-4d3a-a0c1-1e87fae51f49">
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prOwnerAccountGas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="595" width="56" height="11" uuid="0ce3bb02-e16f-4021-9cfd-c7d36fdfdab1">
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prOwnerAccountGas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="132" width="98" height="17" uuid="57e7a269-7b9e-42b2-b495-08e9e743a68c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prCurMonth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="307" width="98" height="17" uuid="7742f376-468b-479f-a7c5-3ca6b1a8b83c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="8" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prCurMonth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="487" width="98" height="11" uuid="3e1d98ce-648b-44e6-b7a4-dc3a929e13ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prCurMonth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="661" width="98" height="11" uuid="517cfcc4-f8c4-4c9f-ac30-3e67f5b0f2b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prCurMonth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="77" width="42" height="11" uuid="3e3f357f-ddf1-489a-bda3-46f878b436b7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prTarifWater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="252" width="42" height="11" uuid="3c383c27-2f15-4963-8f4e-df5836b702b0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prTarifWater}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="514" width="46" height="14" uuid="ea357664-797d-43ca-8e82-35d16d72efaa"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prTarifGas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="688" width="46" height="14" uuid="9630c7e1-8866-4592-9394-bbab24f468f9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{prTarifGas}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>

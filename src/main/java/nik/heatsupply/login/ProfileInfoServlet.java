@@ -36,7 +36,10 @@ public class ProfileInfoServlet extends HttpServlet {
 					jsn.add("userId", u.getIdUser())
 						.add("login", u.getLogin())
 						.add("name", u.getUserName())
-						.add("email", u.getEmail());
+						.add("email", u.getEmail())
+						.add("address", u.getAddress())
+						.add("ownerAccount1", u.getOwneraccount1())
+						.add("ownerAccount2", u.getOwneraccount2());
 				}
 			} else {
 				jsn.add("loginBad", "");

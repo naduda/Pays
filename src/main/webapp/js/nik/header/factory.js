@@ -81,11 +81,14 @@ angular.module('headerFactory', [])
 				method: 'POST',
 				url: '/Pays/RegisterServlet',
 				params: {
-					name: $('#rfI_2').val(),
-					login: $('#rfI_1').val(),
-					password: $('#rfI_3').val(),
-					password2: $('#rfI_4').val(),
-					email: $('#rfI_5').val(),
+					name: $('input[name="name"').val(),
+					address: $('input[name="address"').val(),
+					login: $('input[name="login"').val(),
+					ownerAccount1: $('input[name="ownerAccount1"').val(),
+					ownerAccount2: $('input[name="ownerAccount2"').val(),
+					password: $('input[name="password"').val(),
+					password2: $('input[name="password2"').val(),
+					email: $('input[name="email"').val(),
 				},
 				cache: false
 			})
@@ -102,6 +105,36 @@ angular.module('headerFactory', [])
 				method: 'GET',
 				url: '/Pays/dataServer/db/getData?' + 
 							'params=' + main.userId + ';' + idTarif,
+				cache: false
+			})
+			.success(function(data){
+				if(callback) callback(data);
+			})
+			.error(function(data, status, headers, config){
+				console.log(status)
+			});
+		};
+
+		function getLastTarif(idTarif, callback){
+			$http({
+				method: 'GET',
+				url: '/Pays/dataServer/db/getLastTarif?' + 
+							'params=' + idTarif,
+				cache: false
+			})
+			.success(function(data){
+				if(callback) callback(data);
+			})
+			.error(function(data, status, headers, config){
+				console.log(status)
+			});
+		};
+
+		function setTarif(dt, idTarif, v1, v2, callback){
+			$http({
+				method: 'GET',
+				url: '/Pays/dataServer/db/setTarif?' + 
+							'params=' + dt + ';' + idTarif + ';' + v1 + ';' + v2,
 				cache: false
 			})
 			.success(function(data){
@@ -136,6 +169,9 @@ angular.module('headerFactory', [])
 					name: $('input[name="user"').val(),
 					login: $('input[name="login"').val(),
 					email: $('input[name="email"').val(),
+					address: $('input[name="address"').val(),
+					ownerAccount1: $('input[name="ownerAccount1"').val(),
+					ownerAccount2: $('input[name="ownerAccount2"').val(),
 					pwd: $('input[name="pwd"').val(),
 					pwd1: $('input[name="pwd1"').val(),
 					pwd2: $('input[name="pwd2"').val(),
@@ -162,6 +198,8 @@ angular.module('headerFactory', [])
 				hs.isLogin = data.isLogin;
 			});
 			hs.getUserProfile = getUserProfile;
+			hs.getLastTarif = getLastTarif;
+			hs.setTarif = setTarif;
 			hs.registration = registration;
 			hs.updateProfile = updateProfile;
 			hs.getUserProfileInfo = getUserProfileInfo;

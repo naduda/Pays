@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import nik.heatsupply.common.CommonTools;
 import nik.heatsupply.common.Encryptor;
 import nik.heatsupply.db.ConnectDB;
 import nik.heatsupply.socket.model.User;
@@ -27,10 +28,14 @@ public class ProfileServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+		request.setCharacterEncoding(StandardCharsets.UTF_8.name());
 
 		String name = request.getParameter("name");
 		String login = request.getParameter("login");
 		String email = request.getParameter("email");
+		String address = request.getParameter("address");
+		String ownerAccount1 = request.getParameter("ownerAccount1");
+		String ownerAccount2 = request.getParameter("ownerAccount2");
 		String password = request.getParameter("pwd");
 		String password1 = request.getParameter("pwd1");
 		String password2 = request.getParameter("pwd2");
@@ -50,8 +55,12 @@ public class ProfileServlet extends HttpServlet {
 				User u = ConnectDB.getUser(idUser);
 				Encryptor encr = new Encryptor();
 				if(u != null && encr.decrypt(u.getPassword()).trim().equals(password)) {
-					if(!ConnectDB.updateUser(idUser, name, login, password1, email)) sendMessage(response, ERROR_UPDATE);
-					sendMessage(response, SUCCESS);
+					if(!ConnectDB.updateUser(idUser, name, login, password1, email, address, 
+							CommonTools.toInt(ownerAccount1), CommonTools.toInt(ownerAccount2))) {
+						sendMessage(response, ERROR_UPDATE);
+					} else {
+						sendMessage(response, SUCCESS);
+					}
 				}
 			} else {
 				sendMessage(response, ERROR_PASSWORD);

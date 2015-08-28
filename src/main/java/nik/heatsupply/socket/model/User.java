@@ -7,6 +7,9 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int idUser;
 	private String userName;
+	private String address;
+	private int owneraccount1;
+	private int owneraccount2;
 	private String login;
 	private String password;
 	private String email;
@@ -30,6 +33,30 @@ public class User implements Serializable {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getOwneraccount1() {
+		return owneraccount1;
+	}
+
+	public void setOwneraccount1(int owneraccount1) {
+		this.owneraccount1 = owneraccount1;
+	}
+
+	public int getOwneraccount2() {
+		return owneraccount2;
+	}
+
+	public void setOwneraccount2(int owneraccount2) {
+		this.owneraccount2 = owneraccount2;
 	}
 
 	public String getLogin() {

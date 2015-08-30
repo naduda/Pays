@@ -12,9 +12,24 @@ tr.spaceUnder > td {padding-bottom: 5px;}
 .comment{font-weight: bold; color: red; font-size: 0.7em;}
 .isHide{display: none;}
 .pointer{cursor: pointer;}
-.content{padding: 5px;}
-.inlineContent{padding-left: 3px}
-.modal-content{background-color: #eee}
+.content{
+	padding: 5px;
+	background-color: white;
+}
+.styleContent{
+	border-color: gray;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+.middleContent{
+	max-height: calc(100% - 100px);
+	overflow-y: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	height: calc(100% - 100px);
+}
 
 .menubutton{
 	background: linear-gradient(#D8D8D8, #d0d0d0);
@@ -65,7 +80,7 @@ tr.spaceUnder > td {padding-bottom: 5px;}
 #curLangButton{text-align: left; width: 150px;}
 #curLangButton img{margin: -3px 5px 0 0;}
 span .caret{float: right; margin-top: 7px;}
-div .pull-right{padding: 4px 10px 0 0;}
+div .pull-right{padding-top: 4px;}
 
 .title {
 	font-size: 1.5em;
@@ -76,20 +91,27 @@ div .pull-right{padding: 4px 10px 0 0;}
 	text-align: center
 }
 
-.footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	background-color: silver;
-}
+.footer{bottom: 0;background-color: silver;}
 .footer p{
 	height: 20px;
 	padding-top: 5px;
 }
 
-.loginDiv input {padding: 0 5px;}
-.loginDiv .bold {padding: 0 5px;}
-.loginDiv hr {margin: 10px 0;}
+.loginDiv{
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	padding: 10px;
+	min-height: 150px;
+}
+.loginDiv table{width: 100%}
+.loginDiv form > div{width: 60%;float: right!important;}
+.loginDiv table td{text-align: right;}
+.loginDiv table tr td:first-child{width: 40%;}
+.loginDiv input,
+.loginDiv .bold{padding: 0 5px;}
+.loginDiv hr {margin: 10px 0;border-top: 1px solid #337ab7;}
 a.button {text-decoration: none; color: initial;}
 
 .cTable th, .cTable td {width: 150px; text-align: center;}

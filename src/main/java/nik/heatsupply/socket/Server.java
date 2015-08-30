@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.HashMap;
@@ -28,6 +29,7 @@ import nik.heatsupply.socket.messages.CommandMessage;
 import nik.heatsupply.socket.messages.Message;
 import nik.heatsupply.socket.messages.coders.MessageDecoder;
 import nik.heatsupply.socket.messages.coders.MessageEncoder;
+import nik.heatsupply.socket.model.Data;
 import nik.heatsupply.socket.model.Tarif;
 import nik.heatsupply.socket.model.User;
 
@@ -95,6 +97,18 @@ public class Server {
 							String.format("За %s %s р.",CommonTools.getMonth(dt.minusMonths(1).getMonthValue()), dt.getYear()));
 					report.setParameter("prTarifWater", t1 != null ? t1.getTarif1() : 0);
 					report.setParameter("prTarifGas", t2 != null ? t2.getTarif1() : 0);
+					
+					Timestamp dtBeg = Timestamp.valueOf(dt.minusMonths(2).withDayOfMonth(1).atStartOfDay());
+					Timestamp dtEnd = Timestamp.valueOf(dt.minusMonths(1).withDayOfMonth(1).atStartOfDay());
+					Data monthData = ConnectDB.getMonthByUserTarif(idUser, 1, dtBeg, dtEnd);
+					report.setParameter("prWaterBeg", monthData.getValue1());
+					monthData = ConnectDB.getMonthByUserTarif(idUser, 1, dtEnd, null);
+					report.setParameter("prWaterEnd", monthData.getValue1());
+					
+					monthData = ConnectDB.getMonthByUserTarif(idUser, 2, dtBeg, dtEnd);
+					report.setParameter("prGasBeg", monthData.getValue1());
+					monthData = ConnectDB.getMonthByUserTarif(idUser, 2, dtEnd, null);
+					report.setParameter("prGasEnd", monthData.getValue1());
 				}
 
 				if(format.equals("html")) {

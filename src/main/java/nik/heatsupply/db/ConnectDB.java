@@ -54,6 +54,11 @@ public class ConnectDB {
 		return (Data) new BatisJDBC(s -> s.getMapper(IMapper.class).getDataByUserTarif(idUser, idTarif)).get();
 	}
 	
+	public static Data getMonthByUserTarif(int idUser, int idTarif, Timestamp beg, Timestamp end) {
+		Timestamp end2 = end == null ? new Timestamp(System.currentTimeMillis()) : end;
+		return (Data) new BatisJDBC(s -> s.getMapper(IMapper.class).getMonthByUserTarif(idUser, idTarif, beg, end2)).get();
+	}
+	
 	@SuppressWarnings("unchecked")
 	public static List<Data> getAllDataByUserTarif(int idUser, int idTarif) {
 		return (List<Data>) new BatisJDBC(s -> s.getMapper(IMapper.class).getAllDataByUserTarif(idUser, idTarif)).get();

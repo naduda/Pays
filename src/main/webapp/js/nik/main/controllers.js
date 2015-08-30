@@ -211,10 +211,6 @@ heatSupply.mainControllers
 				li = li.parentNode;
 			}
 
-			$('#reportContent').css({
-				'max-height': ($(window).height() - 115) + 'px',
-				'overflow': 'auto'
-			});
 			heatSupply.currentReport = li.id;
 			heatSupply.socket.send(JSON.stringify({
 				'type': 'CommandMessage', 'command': 'getReport',

@@ -37,7 +37,13 @@ public interface IMapper {
 			@Param("owneraccount1")int ownerAccount1, @Param("owneraccount2")int ownerAccount2);
 	
 	@Select("select * from data where iduser = #{iduser} and idtarif = #{idtarif} order by dt desc limit 1")
-	Data getDataByUserTarif(@Param("iduser") int idUser, @Param("idtarif") int idTarif);
+	Data getDataByUserTarif(@Param("iduser")int idUser, @Param("idtarif")int idTarif);
+	
+	@Select("select * from data " + 
+			"where iduser = #{iduser} and idtarif = #{idtarif} and dt >= #{beg} and dt < #{end} " + 
+			"order by dt desc limit 1")
+	Data getMonthByUserTarif(@Param("iduser")int idUser, @Param("idtarif")int idTarif,
+			@Param("beg")Timestamp beg, @Param("end")Timestamp end);
 	
 	@Delete("delete from data where iduser = #{iduser} and idtarif = #{idtarif} and dt = #{dt}")
 	Integer deleteData(@Param("iduser")int idUser, @Param("idtarif")int idTarif, @Param("dt")Timestamp dt);

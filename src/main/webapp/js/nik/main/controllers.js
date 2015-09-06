@@ -47,10 +47,26 @@ heatSupply.mainControllers
 					hsFactory.getData($scope.idTarif, function(data){
 						$scope.dataDTbeg = data.dt;
 						$scope.dataValBeg = data.value1;
-						if(data.value1 === '-')
+						if(data.value1 === '-'){
 							$scope.dataValEnd = 0;
-						else
-							$scope.dataValEnd = Number(data.value1) + 100;
+						} else{
+							$scope.dataValEnd = Number(data.value1);
+							$http({
+								method: 'GET',
+								url: '/Pays/dataServer/db/getAllData?' + 
+											'params=' + hsFactory.userId + ';' + $scope.idTarif,
+								cache: false
+							})
+							.success(function(data){
+								if(data.length > 1){
+									var o1 = data[0], o2 = data[1];
+									$scope.dataValEnd = $scope.dataValEnd + (o1.value1 - o2.value1);
+								}
+							})
+							.error(function(data, status, headers, config){
+								console.log(status)
+							});
+						}
 					});
 					if($scope.isShowHistory) $scope.getDataHistory();
 				});
@@ -191,7 +207,24 @@ heatSupply.mainControllers
 				$('#dtBeg').html(data.dt);
 				$('#valBeg').html(data.value1);
 				$('#dtEnd').val(data.dtEnd);
-				$('#valEnd').val(Number(data.value1) + 100);
+				$('#valEnd').val(Number(data.value1));
+
+				$http({
+					method: 'GET',
+					url: '/Pays/dataServer/db/getAllData?' + 
+								'params=' + hsFactory.userId + ';' + $scope.idTarif,
+					cache: false
+				})
+				.success(function(data){
+					if(data.length > 1){
+						var o1 = data[0], o2 = data[1];
+						$('#valEnd').val(Number($('#valEnd').val()) + (o1.value1 - o2.value1));
+					}
+				})
+				.error(function(data, status, headers, config){
+					console.log(status)
+				});
+
 				if($scope.isShowHistory){
 					var d = new Object(null);
 					d.dt = data.dt;

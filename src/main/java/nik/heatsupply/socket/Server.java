@@ -98,8 +98,8 @@ public class Server {
 					report.setParameter("prTarifWater", t1 != null ? t1.getTarif1() : 0);
 					report.setParameter("prTarifGas", t2 != null ? t2.getTarif1() : 0);
 					
-					Timestamp dtBeg = Timestamp.valueOf(dt.minusMonths(2).withDayOfMonth(1).atStartOfDay());
-					Timestamp dtEnd = Timestamp.valueOf(dt.minusMonths(1).withDayOfMonth(1).atStartOfDay());
+					Timestamp dtBeg = Timestamp.valueOf(dt.minusMonths(1).withDayOfMonth(1).atStartOfDay());
+					Timestamp dtEnd = Timestamp.valueOf(dt.withDayOfMonth(1).atStartOfDay());
 					Data monthData = ConnectDB.getMonthByUserTarif(idUser, 1, dtBeg, dtEnd);
 					report.setParameter("prWaterBeg", monthData.getValue1());
 					monthData = ConnectDB.getMonthByUserTarif(idUser, 1, dtEnd, null);

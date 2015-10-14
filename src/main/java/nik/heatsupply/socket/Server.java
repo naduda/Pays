@@ -37,6 +37,7 @@ import nik.heatsupply.socket.model.User;
 encoders = {MessageEncoder.class}, decoders = {MessageDecoder.class})
 public class Server {
 	private static final Map<Session, WebUser> users = Collections.synchronizedMap(new HashMap<>());
+	public static ConnectDB condb = new ConnectDB();
 
 	private void sender(Session ss) throws InterruptedException {
 		for (int i = 0; i < 10; i++) {
@@ -87,9 +88,9 @@ public class Server {
 				if(reportName.equals("Water")) {
 					LocalDate dt = LocalDate.now();
 					int idUser = Integer.parseInt(userId);
-					User user = ConnectDB.getUser(idUser);
-					Tarif t1 = ConnectDB.getLastTarif(1);
-					Tarif t2 = ConnectDB.getLastTarif(2);
+					User user = condb.getUser(idUser);
+					Tarif t1 = condb.getLastTarif(1);
+					Tarif t2 = condb.getLastTarif(2);
 					report.setParameter("prName", user.getUserName() + ", " + user.getAddress());
 					report.setParameter("prOwnerAccountWater", user.getOwneraccount1());
 					report.setParameter("prOwnerAccountGas", user.getOwneraccount2());
@@ -100,14 +101,14 @@ public class Server {
 					
 					Timestamp dtBeg = Timestamp.valueOf(dt.minusMonths(1).withDayOfMonth(1).atStartOfDay());
 					Timestamp dtEnd = Timestamp.valueOf(dt.withDayOfMonth(1).atStartOfDay());
-					Data monthData = ConnectDB.getMonthByUserTarif(idUser, 1, dtBeg, dtEnd);
+					Data monthData = condb.getMonthByUserTarif(idUser, 1, dtBeg, dtEnd);
 					report.setParameter("prWaterBeg", monthData.getValue1());
-					monthData = ConnectDB.getMonthByUserTarif(idUser, 1, dtEnd, null);
+					monthData = condb.getMonthByUserTarif(idUser, 1, dtEnd, null);
 					report.setParameter("prWaterEnd", monthData.getValue1());
 					
-					monthData = ConnectDB.getMonthByUserTarif(idUser, 2, dtBeg, dtEnd);
+					monthData = condb.getMonthByUserTarif(idUser, 2, dtBeg, dtEnd);
 					report.setParameter("prGasBeg", monthData.getValue1());
-					monthData = ConnectDB.getMonthByUserTarif(idUser, 2, dtEnd, null);
+					monthData = condb.getMonthByUserTarif(idUser, 2, dtEnd, null);
 					report.setParameter("prGasEnd", monthData.getValue1());
 				}
 

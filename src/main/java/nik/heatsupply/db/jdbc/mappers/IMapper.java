@@ -63,7 +63,7 @@ public interface IMapper {
 	Integer updateData(@Param("dt")Timestamp dt, @Param("olddt")Timestamp oldDT, @Param("idtarif")int idTarif, 
 			@Param("iduser")int idUser, @Param("value1")double value1, @Param("value2")double value2);
 	
-	@Select("select * from tarifs where idtarif = #{idtarif} order by dt desc limit 1")
+	@Select("select * from tarifs where idtarif = #{idtarif} and dt < now() order by dt desc limit 1")
 	Tarif getLastTarif(@Param("idtarif")int idTarif);
 	
 	@Insert("insert into tarifs (dt, idtarif, tarif1, tarif2) values (#{dt}, #{idtarif}, #{tarif1}, #{tarif2})")

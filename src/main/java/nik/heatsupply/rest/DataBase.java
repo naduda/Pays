@@ -21,7 +21,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import nik.heatsupply.db.ConnectDB;
+import nik.heatsupply.socket.Server;
 import nik.heatsupply.socket.model.Data;
 import nik.heatsupply.socket.model.Tarif;
 
@@ -52,7 +52,7 @@ public class DataBase {
 				String[] pars = params.split(";");
 				int idUser = Integer.parseInt(pars[0]);
 				int idTarif = Integer.parseInt(pars[1]);
-				List<Data> dataList = ConnectDB.getAllDataByUserTarif(idUser, idTarif);
+				List<Data> dataList = Server.condb.getAllDataByUserTarif(idUser, idTarif);
 
 				JsonArrayBuilder jArr = Json.createArrayBuilder();
 				for(Data data : dataList) {
@@ -74,7 +74,7 @@ public class DataBase {
 				String[] pars = params.split(";");
 				int idUser = Integer.parseInt(pars[0]);
 				int idTarif = Integer.parseInt(pars[1]);
-				Data data = ConnectDB.getDataByUserTarif(idUser, idTarif);
+				Data data = Server.condb.getDataByUserTarif(idUser, idTarif);
 
 				j.add("dt", data == null ? "-": df.format(data.getDt()))
 				 .add("idTarif", idTarif)
@@ -99,7 +99,7 @@ public class DataBase {
 				double val1 = Double.parseDouble(pars[3]);
 				double val2 = Double.parseDouble(pars[4]);
 				
-				if(ConnectDB.addData(dt, idTarif, idUser, val1, val2))
+				if(Server.condb.addData(dt, idTarif, idUser, val1, val2))
 					j.add("dt", df.format(dt))
 						.add("value1", val1 + "")
 						.add("value2", val2 + "")
@@ -118,7 +118,7 @@ public class DataBase {
 				Date dtd = df.parse(pars[2]);
 				Timestamp dt = new Timestamp(dtd.getTime());
 				
-				if(ConnectDB.deleteData(idUser, idTarif, dt))
+				if(Server.condb.deleteData(idUser, idTarif, dt))
 					j.add("remove", df.format(dt));
 			} catch (NumberFormatException e) {
 				j.add("bad", "notok");
@@ -138,7 +138,7 @@ public class DataBase {
 				Date olddtd = df.parse(pars[5]);
 				Timestamp olddt = new Timestamp(olddtd.getTime());
 				
-				if(ConnectDB.updateData(dt, olddt, idTarif, idUser, val1, val2)) {
+				if(Server.condb.updateData(dt, olddt, idTarif, idUser, val1, val2)) {
 					j.add("message", "success")
 						.add("dt", df.format(dt))
 						.add("value1", val1 + "")
@@ -157,7 +157,7 @@ public class DataBase {
 			try {
 				String[] pars = params.split(";");
 				int idTarif = Integer.parseInt(pars[0]);
-				Tarif t = ConnectDB.getLastTarif(idTarif);
+				Tarif t = Server.condb.getLastTarif(idTarif);
 				j.add("dt", t == null ? "-" : df.format(t.getDt()))
 				 .add("t1", t == null ? 0 : t.getTarif1())
 				 .add("t2", t == null ? 0 : t.getTarif2());
@@ -175,7 +175,7 @@ public class DataBase {
 				int idTarif = Integer.parseInt(pars[1]);
 				double tarif1 = Double.parseDouble(pars[2]);
 				double tarif2 = Double.parseDouble(pars[3]);
-				if(ConnectDB.addTarif(dt, idTarif, tarif1, tarif2)) {
+				if(Server.condb.addTarif(dt, idTarif, tarif1, tarif2)) {
 					j.add("message", "success");
 				}
 			} catch (NumberFormatException e) {

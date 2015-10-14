@@ -15,10 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import nik.heatsupply.common.CommonTools;
 import nik.heatsupply.db.ConnectDB;
+import nik.heatsupply.socket.Server;
 
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static ConnectDB condb = Server.condb;
 	private final int ERROR_LOGIN = 1;
 	private final int ERROR_PASSWORD = 2;
 	private final int SUCCESS = 3;
@@ -43,7 +45,7 @@ public class RegisterServlet extends HttpServlet {
 			String email = request.getParameter("email");
 
 			if(password.equals(password2)) {
-				if(ConnectDB.addUser(userName, address, login, password, email, 
+				if(condb.addUser(userName, address, login, password, email, 
 						CommonTools.toInt(ownerAccount1), CommonTools.toInt(ownerAccount2))) {
 					sendMessage(response, SUCCESS);
 				} else {

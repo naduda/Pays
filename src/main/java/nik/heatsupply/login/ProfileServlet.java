@@ -17,11 +17,13 @@ import javax.servlet.http.HttpSession;
 import nik.heatsupply.common.CommonTools;
 import nik.heatsupply.common.Encryptor;
 import nik.heatsupply.db.ConnectDB;
+import nik.heatsupply.socket.Server;
 import nik.heatsupply.socket.model.User;
 
 @WebServlet("/ProfileServlet")
 public class ProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static ConnectDB condb = Server.condb;
 	private final int ERROR_UPDATE = 1;
 	private final int ERROR_PASSWORD = 2;
 	private final int SUCCESS = 3;
@@ -52,10 +54,10 @@ public class ProfileServlet extends HttpServlet {
 			if(password1.equals(password2)) {
 				String userId = session.getAttribute("userId").toString();
 				int idUser = Integer.parseInt(userId);
-				User u = ConnectDB.getUser(idUser);
+				User u = condb.getUser(idUser);
 				Encryptor encr = new Encryptor();
 				if(u != null && encr.decrypt(u.getPassword()).trim().equals(password)) {
-					if(!ConnectDB.updateUser(idUser, name, login, password1, email, address, 
+					if(!condb.updateUser(idUser, name, login, password1, email, address, 
 							CommonTools.toInt(ownerAccount1), CommonTools.toInt(ownerAccount2))) {
 						sendMessage(response, ERROR_UPDATE);
 					} else {

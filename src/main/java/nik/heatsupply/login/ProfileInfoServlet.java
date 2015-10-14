@@ -14,11 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import nik.heatsupply.db.ConnectDB;
+import nik.heatsupply.socket.Server;
 import nik.heatsupply.socket.model.User;
 
 @WebServlet("/ProfileInfoServlet")
 public class ProfileInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static ConnectDB condb = Server.condb;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
@@ -31,7 +33,7 @@ public class ProfileInfoServlet extends HttpServlet {
 
 			if(session != null && Boolean.parseBoolean(session.getAttribute("login").toString())) {
 				String userId = session.getAttribute("userId").toString();
-				User u = ConnectDB.getUser(Integer.parseInt(userId));
+				User u = condb.getUser(Integer.parseInt(userId));
 				if(u != null) {
 					jsn.add("userId", u.getIdUser())
 						.add("login", u.getLogin())

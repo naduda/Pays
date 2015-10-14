@@ -79,7 +79,8 @@ public class LoginServlet extends HttpServlet {
 	private boolean isChecked(String userName, String psw, HttpSession session) {
 		try {
 			Encryptor encr = new Encryptor();
-			User u = ConnectDB.getUser(userName);
+			ConnectDB condb = new ConnectDB();
+			User u = condb.getUser(userName);
 			if(u == null) return false;
 			if(encr.decrypt(u.getPassword()).trim().equals(psw)) {
 				session.setAttribute("user", u.getLogin());

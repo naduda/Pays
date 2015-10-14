@@ -16,18 +16,18 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 
-import nik.heatsupply.db.ConnectDB;
 import nik.heatsupply.db.jdbc.mappers.IMapper;
+import nik.heatsupply.socket.Server;
 
 public class PostgresDB {
 	private SqlSessionFactory sqlSessionFactory;
 	private String connStr;
 	
 	public PostgresDB () {
-		setMappers(ConnectDB.getDataSource());
+		setMappers(Server.condb.getDataSource());
 		
 		try {
-			Connection conn = ConnectDB.getDataSource().getConnection();
+			Connection conn = Server.condb.getDataSource().getConnection();
 			DatabaseMetaData dbmd = conn.getMetaData();
 			connStr = dbmd.getURL();
 			connStr = connStr.substring(connStr.indexOf("://") + 3);

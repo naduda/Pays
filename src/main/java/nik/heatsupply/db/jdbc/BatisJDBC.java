@@ -28,8 +28,8 @@ public class BatisJDBC {
 		while (count < MAX_REPET) {
 			session = null;
 			try {
-				if(Server.condb.getPostgressDB() != null ) {
-					session = Server.condb.getPostgressDB().getSqlSessionFactory().openSession(isCommit);
+				if(Server.condb.getDataSource() != null ) {
+					session = Server.condb.getSqlSessionFactory().openSession(isCommit);
 					try {
 						return iBatis.getResult(session);
 					} catch (Exception e) {
@@ -41,7 +41,7 @@ public class BatisJDBC {
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-				Server.condb.setPostgressDB(null);
+				Server.condb.setDataSource(null);
 			} finally {
 				if (session != null) session.close();
 			}
@@ -54,8 +54,8 @@ public class BatisJDBC {
 		while (count < MAX_REPET) {
 			session = null;
 			try {
-				if(Server.condb.getPostgressDB() != null) {
-					session = Server.condb.getPostgressDB().getSqlSessionFactory().openSession(isCommit);
+				if(Server.condb.getDataSource() != null) {
+					session = Server.condb.getSqlSessionFactory().openSession(isCommit);
 					iBatis.getResult(session);
 					return true;
 				} else {
@@ -63,7 +63,7 @@ public class BatisJDBC {
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-				Server.condb.setPostgressDB(null);
+				Server.condb.setDataSource(null);
 			} finally {
 				if (session != null) session.close();
 			}
@@ -76,8 +76,8 @@ public class BatisJDBC {
 		while (count < MAX_REPET) {
 			session = null;
 			try {
-				if(Server.condb.getPostgressDB() != null) {
-					session = Server.condb.getPostgressDB().getSqlSessionFactory().openSession(false);
+				if(Server.condb.getDataSource() != null) {
+					session = Server.condb.getSqlSessionFactory().openSession(false);
 					for(int i = 0; i < iCollection.length; i++) {
 						iBatis = iCollection[i];
 						if(iBatis != null) iBatis.getResult(session);
@@ -90,7 +90,7 @@ public class BatisJDBC {
 			} catch (Exception e) {
 				if(session != null) session.rollback();
 				e.printStackTrace();
-				Server.condb.setPostgressDB(null);
+				Server.condb.setDataSource(null);
 			} finally {
 				if (session != null) session.close();
 			}

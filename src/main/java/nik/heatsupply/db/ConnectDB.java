@@ -7,21 +7,40 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import org.apache.ibatis.mapping.Environment;
+import org.apache.ibatis.session.Configuration;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.transaction.TransactionFactory;
+import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
+
 import nik.heatsupply.common.Encryptor;
 import nik.heatsupply.db.jdbc.BatisJDBC;
-import nik.heatsupply.db.jdbc.PostgresDB;
 import nik.heatsupply.db.jdbc.mappers.IMapper;
-import nik.heatsupply.socket.Server;
 import nik.heatsupply.socket.model.Data;
 import nik.heatsupply.socket.model.Tarif;
 import nik.heatsupply.socket.model.User;
 
 public class ConnectDB {
 	private DataSource dsLocal;
+	private SqlSessionFactory sqlSessionFactory;
 	private Context context = null;
 	
 	public ConnectDB() {
 		System.out.println("create ConnectDB " + this.toString());
+	}
+	
+	private void setMappers(DataSource dataSource) {
+		TransactionFactory transactionFactory = new JdbcTransactionFactory();
+		Environment environment = new Environment("development", transactionFactory, dataSource);
+		Configuration configuration = new Configuration(environment);
+		configuration.addMapper(IMapper.class);
+		//configuration.addMappers("jdbc.mappers");
+		sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
+	}
+	
+	public SqlSessionFactory getSqlSessionFactory() {
+		return sqlSessionFactory;
 	}
 	
 	public User getUser(int idUser) {
@@ -98,28 +117,14 @@ public class ConnectDB {
 				System.out.println(e1.getMessage());
 			}
 		}
+		setMappers(dsLocal);
 		return dsLocal;
 	}
 	
 	public void setDataSource(DataSource ds) {
-		if(dsLocal == null) dsLocal = ds;
-	}
-	
-	private PostgresDB postgressDB;
-	private boolean isFirstStart = true;
-	public PostgresDB getPostgressDB() {
-		if (postgressDB == null) {
-			synchronized (ConnectDB.class) {
-				if (!isFirstStart) Server.clearUsers();
-				postgressDB = new PostgresDB();
-				isFirstStart = false;
-				System.out.println("New connection");
-			}
+		if(dsLocal == null) {
+			dsLocal = ds;
+			setMappers(dsLocal);
 		}
-		return postgressDB;
-	}
-	
-	public void setPostgressDB(PostgresDB value) {
-		postgressDB = value;
 	}
 }

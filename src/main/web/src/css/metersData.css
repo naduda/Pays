@@ -1,0 +1,10 @@
+#metersData .nav-pills{margin-bottom: 15px;}
+#metersData .nav-pills>li>a {border-radius: 0;}
+#metersData .nav>li>a{padding: 5px;}
+#metersData .nav-pills>li.active>a,
+#metersData .nav-pills>li.active>a:focus,
+#metersData .nav-pills>li.active>a:hover {
+	color: #555;
+	background-color: transparent;
+	border-bottom: 2px solid #555;
+}

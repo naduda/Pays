@@ -1,0 +1,13 @@
+<span class="dropdown lang-directive">
+	<button class="btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+		<img ng-src="{{lang.img}}" height="18">
+		<span>{{lang.langName}}</span>
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu navbar-default" role="menu">
+		<li ng-repeat="locale in locales" ng-click="changeLanguage(locale.id);">
+			<img ng-src="{{locale.img}}" alt="flag" width="25">
+			<span>{{locale.langName}}</span>
+		</li>
+	</ul>
+</span>

@@ -1,0 +1,44 @@
+<div ng-controller="AddDataCtrl as data">
+	<div>
+		<span>Select Service </span>
+		<span class="dropdown">
+			<button class="btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				<span>{{data.curService.name}}</span>
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu navbar-default" role="menu">
+				<li ng-repeat="service in data.services" ng-click="data.changeService(service);">
+					<span>{{service.name}}</span>
+				</li>
+			</ul>
+		</span>
+	</div>
+	<div>
+		<span>Last value</span>
+		<span>({{data.lastValue.DATE | date:'dd.MM.yyyy'}}):</span>
+		<input type="text" ng-model="data.lastValue.VALUE">
+		<span>Current value:</span>
+		<input type="text" ng-model="data.currentValue.VALUE">
+		<button class="btn btn-sm btn-primary" ng-click="data.addData();">Submit</button>
+	</div>
+	<br>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Value</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="d in data.dataPeriod | orderBy:'-date'">
+					<td>{{d.date | date:'dd.MM.yyyy'}}</td>
+					<td>{{d.value}}</td>
+					<td>edit</td>
+					<td>remove</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,114 @@
+<div ng-controller="RegistrationCtrl as registr" class="col-xs-12" style="padding:5px;">
+	<h3></h3>
+	<div error-directive></div>
+	<form method="POST" class="row form-horizontal" name="regForm" role="form" ng-submit="regForm.$valid && registr.registration()">
+		<div class="form-group" ng-show="registr.required">
+			<label for="username" class="col-xs-4 control-label text-right" pr-lang="keyLogin"></label>
+			<div class="col-xs-8">
+				<div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-user fa-fw"></i>
+					</div>
+					<input type="text" class="form-control" id="username" placeholder="login" ng-model="registr.login" ng-enter="regForm.$valid && registr.registration()" ng-required="registr.required">
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="email" class="col-xs-4 control-label text-right" pr-lang="kEmail"></label>
+			<div class="col-xs-8">
+				<div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-at fa-fw"></i>
+					</div>
+					<input type="email" class="form-control" id="email" placeholder="email address" ng-disabled="isDisabled" autocomplete="off" ng-model="registr.email" ng-enter="regForm.$valid && registr.registration()" required>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="password" class="col-xs-4 control-label text-right" pr-lang="kPassword"></label>
+			<div class="col-xs-8">
+				<div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-key fa-fw"></i>
+					</div>
+					<input type="password" class="form-control" id="password" placeholder="password" ng-model="registr.password" ng-enter="regForm.$valid && registr.registration()" required>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group" ng-show="!registr.required">
+			<label for="password1" class="col-xs-4 control-label text-right" pr-lang="kPassword1"></label>
+			<div class="col-xs-8">
+				<div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-key fa-fw"></i>
+					</div>
+					<input type="password" class="form-control" id="password1" placeholder="password" ng-model="registr.password1" ng-enter="regForm.$valid && registr.registration()">
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="password2" class="col-xs-4 control-label text-right" pr-lang="kPassword2"></label>
+			<div class="col-xs-8">
+				<div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-key fa-fw"></i>
+					</div>
+					<input type="password" class="form-control" id="password2" placeholder="password" ng-model="registr.password2" ng-enter="regForm.$valid && registr.registration()" ng-required="registr.required">
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="surname" class="col-xs-4 control-label text-right" pr-lang="keySurName"></label>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" id="surname" placeholder="surname" ng-model="registr.surname" ng-enter="regForm.$valid && registr.registration()">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="name" class="col-xs-4 control-label text-right" pr-lang="keyName"></label>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" id="name" placeholder="name" ng-model="registr.name" ng-enter="regForm.$valid && registr.registration()">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="middlename" class="col-xs-4 control-label text-right" pr-lang="keyMiddleName"></label>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" id="middlename" placeholder="middle name" ng-model="registr.middlename" ng-enter="regForm.$valid && registr.registration()">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="phone" class="col-xs-4 control-label text-right" pr-lang="keyPhone"></label>
+			<div class="col-xs-8">
+				<div class="input-group">
+					<div class="input-group-addon">
+						<i class="fa fa-phone fa-fw"></i>
+					</div>
+					<input type="text" class="form-control" id="phone" pattern="\+?[3][8][(][0-9]{3}[)][0-9]{7}" placeholder="+38(050)1122334" ng-model="registr.phone" ng-enter="regForm.$valid && registr.registration()">
+				</div>
+			</div>
+		</div>
+
+		<hr class="col-xs-12">
+
+		<div class="form-group">
+			<div class="col-xs-6 text-right">
+				<button type="submit" class="btn btn-primary">
+					<span ng-class="registr.progressIconClass"></span>
+					<span pr-lang="{{registr.btnText}}"></span>
+				</button>
+			</div>
+			<div class="col-xs-6 text-right">
+				<a href="#/main" class="btn btn-danger">
+					<span pr-lang="keyCancel"></span>
+				</a>
+			</div>
+		</div>
+	</form>
+</div>

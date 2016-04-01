@@ -1,0 +1,47 @@
+{
+  "name": "HeatSupply",
+  "authors": [
+    "Pavlo <naduda.pr@gmail.com>"
+  ],
+  "description": "JQuery, Angular(with route, animate and file-saver), bootstrap, font-awesome, messageResource, highcharts, ag-grid",
+  "license": "MIT",
+  "homepage": "index.html",
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "angular": "angularjs#~1.5.0",
+    "angular-route": "~1.5.0",
+    "angular-animate": "~1.5.0",
+    "angular-file-saver": "~1.0.3",
+    "bootstrap": "~3.3.6",
+    "bootstrap3-dialog": "~1.34.9",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
+    "components-font-awesome": "~4.5.0",
+    "highcharts": "~4.2.3",
+    "messageResource.js": "https://github.com/suhaibkhan/messageResource.js.git",
+    "angular-i18n": "~1.5.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "./dist/css/bootstrap.min.css",
+        "./dist/js/bootstrap.min.js"
+      ]
+    },
+    "ag-grid": {
+      "main": [
+        "./dist/ag-grid.min.js"
+      ]
+    },
+    "messageResource.js": {
+      "main": "./dist/messageResource.min.js"
+    },
+    "angular-i18n": {
+      "main": [
+        "./angular-locale_uk-ua.js",
+        "../../../node_modules/d3/d3.min.js",
+        "../../../node_modules/n3-charts/build/LineChart.js",
+        "../../../node_modules/n3-charts/build/LineChart.css"
+      ]
+    }
+  }
+}

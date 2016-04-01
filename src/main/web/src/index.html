@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Monitor</title>
+	<link rel="shortcut icon" href="images/logo_nik.png">
+	<!-- build:css css/vendor.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="bower_components/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css" />
+	<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css css/style.min.css -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- endbuild -->
+
+	<!--script src="http://maps.googleapis.com/maps/api/js"></script-->
+</head>
+<body ng-app="Monitor">
+	<div ng-view class="mainContent"></div>
+	<!-- <ng-include src="'main.html'" ng-controller="MainCtrl as main"></ng-include> -->
+
+	<!-- build:js js/vendor.js --><!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/blob-polyfill/Blob.js"></script>
+<script src="bower_components/file-saver.js/FileSaver.js"></script>
+<script src="bower_components/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+<script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="bower_components/messageResource.js/dist/messageResource.min.js"></script>
+<script src="bower_components/angular-i18n/angular-locale_uk-ua.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+	<!-- build:js js/main.min.js -->
+	<script src="js/filters.js"></script>
+	<script src="js/routeConfig.js"></script>
+
+	<script src="js/services/DataService.js"></script>
+	<script src="js/services/HTTPWrapper.js"></script>
+	<script src="js/services/httpService.js"></script>
+	<script src="js/services/translateService.js"></script>
+	<script src="js/services/auth.js"></script>
+	<script src="js/services/errorService.js"></script>
+
+	<script src="js/directives/Lang.js"></script>
+	<script src="js/directives/Error.js"></script>
+	<script src="js/directives/Enter.js"></script>
+	<script src="js/directives/Login.js"></script>
+	<script src="js/directives/EmbedSrc.js"></script>
+
+	<script src="js/controllers/MainCtrl.js"></script>
+	<script src="js/controllers/RegistrationCtrl.js"></script>
+	<script src="js/controllers/ChangeTarifCtrl.js"></script>
+	<script src="js/controllers/AddDataCtrl.js"></script>
+
+	<script src="js/init.js"></script>
+	<!-- endbuild -->
+</body>

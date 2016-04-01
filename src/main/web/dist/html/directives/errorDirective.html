@@ -1,0 +1,13 @@
+<div class="errorDiv" ng-show="errCtrl.show">
+	<div class="header bg-danger text-danger">
+		<div class="left">
+			<span class="fa fa-warning"></span>
+		</div>
+		<div class="right">
+			<a class="fa fa-close pull-right text-danger" ng-click="errCtrl.close();"></a>
+		</div>
+	</div>
+	<div class="content text-info">
+		<span pr-lang="{{errCtrl.langKey}}" ng-bind-html="errCtrl.message">
+	</div>
+</div>

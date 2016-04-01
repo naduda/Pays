@@ -1,0 +1,15 @@
+<div id="mainDiv" ng-controller="MainCtrl as main" style="height: 100%;">
+	<button class="btn btn-sm btn-default" ng-click="main.logout();">Logout</button>
+	<button class="btn btn-sm btn-primary" ng-click="main.report();">
+		Report
+	</button>
+	<a href="#/changeTarif" class="btn btn-sm btn-primary">
+		Change Tarif
+	</a>
+	<a href="#/adddata" class="btn btn-sm btn-primary">
+		Add Data
+	</a>
+	<div style="height: calc(100% - 35px);">
+		<embed embed-src="{{main.src}}" type="application/pdf" style="width:100%;height:100%;">
+	</div>
+</div>

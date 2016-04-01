@@ -1,0 +1,46 @@
+<form method="POST" class="row form-horizontal" name="loginForm" role="form" ng-submit="loginForm.$valid && login()">
+	<div class="form-group">
+		<label for="username" class="col-xs-3 control-label text-right" pr-lang="keyLogin"></label>
+		<div class="col-xs-9">
+			<div class="input-group">
+				<div class="input-group-addon">
+					<span class="fa fa-user fa-fw"></span>
+				</div>
+				<input type="text" class="form-control" id="username" placeholder="user name" ng-model="credentials.username" ng-enter="loginForm.$valid && login()" required>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="password" class="col-xs-3 control-label text-right" pr-lang="kPassword"></label>
+		<div class="col-xs-9">
+			<div class="input-group">
+				<div class="input-group-addon">
+					<span class="fa fa-key fa-fw"></span>
+				</div>
+				<input type="password" class="form-control" id="password" placeholder="password" ng-model="credentials.password" ng-enter="loginForm.$valid && login()" required>
+			</div>
+		</div>
+	</div>
+
+	<legend></legend>
+
+	<div class="form-group">
+		<div class="col-xs-9 col-xs-offset-3">
+			<button type="submit" class="btn btn-primary">
+				<span ng-class="progressIconClass"></span>
+				<span pr-lang="kLogin"></span>
+			</button>
+			
+			<a href="#/registration" class="button pull-right">
+				<button class="btn btn-success pull-right" pr-lang="kRegisterButton"></button>
+			</a>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-xs-9 col-xs-offset-3">
+			<a href="#/registrationRecover" pr-lang="kRecover"></a>
+		</div>
+	</div>
+</form>

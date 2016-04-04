@@ -15,6 +15,7 @@ $RECYCLE.BIN/
 *.msp
 node_modules
 bower_components
+dist
 
 # Windows shortcuts
 *.lnk

@@ -8,6 +8,8 @@
 **/.metadata
 target
 .gradle
+.externalToolBuilders
+src/main/resources/application.properties
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

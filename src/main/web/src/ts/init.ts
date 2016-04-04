@@ -20,7 +20,7 @@
 		var ctrls = monitor.controllers,
 				dirs = monitor.directives,
 				servs = monitor.services;
-		var app = angular.module('Monitor', ['ngRoute', 'ngAnimate']);
+		var app = angular.module('Pays', ['ngRoute', 'ngAnimate']);
 
 		app.config(monitor.RouteConfig)
 			.run((authService, $rootScope, $route,

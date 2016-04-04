@@ -172,8 +172,8 @@ public class DataBaseImpl implements IDataBase {
 		return new BatisImpl(dataSource, s -> s.getMapper(IMapper.class).removeTarifByIdService(idservice)).run();
 	}
 	
-	public List<Map<String, Object>> getData(int idservice, Timestamp date) {
-		return (List<Map<String, Object>>) new BatisImpl(dataSource, 
+	public Map<String, Object> getData(int idservice, Timestamp date) {
+		return (Map<String, Object>) new BatisImpl(dataSource, 
 				s -> s.getMapper(IMapper.class).getData(idservice, date)).get();
 	}
 	

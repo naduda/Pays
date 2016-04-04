@@ -7,7 +7,7 @@ var monitor;
     var controllers;
     (function (controllers) {
         var MainCtrl = (function () {
-            function MainCtrl(dataService, $scope, $location, $sce, $http, authService) {
+            function MainCtrl(dataService, $scope, $sce, $http, authService) {
                 this.$sce = $sce;
                 this.$http = $http;
                 this.authService = authService;
@@ -19,7 +19,13 @@ var monitor;
             }
             MainCtrl.prototype.report = function () {
                 var _this = this;
-                this.$http.get('/secureresources/report', { responseType: 'arraybuffer' })
+                this.$http.get('/secureresources/report', {
+                    responseType: 'arraybuffer',
+                    params: {
+                        month: new Date().getMonth(),
+                        year: new Date().getFullYear()
+                    }
+                })
                     .success(function (response) {
                     var file = new Blob([response], { type: 'application/pdf' });
                     var fileURL = URL.createObjectURL(file);

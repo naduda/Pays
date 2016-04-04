@@ -2,7 +2,7 @@ package pr.pays.rest;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,27 +44,36 @@ public class SecureResources {
 	}
 	
 	@RequestMapping(value="/report", method=RequestMethod.GET)
-	public @ResponseBody byte[] getReport() {
+	public @ResponseBody byte[] getReport(HttpServletRequest request) {
 		try {
 			Report report = new Report();
 			User user = getCurrentUser();
 			List<Map<String, Object>> profile = dao.getProfileByUserId(user.getId());
-			
-			Calendar calendar = Calendar.getInstance();
-			report.setParameter("prCurMonth", "За " + Common4rest.getCurrentMonth(calendar.get(Calendar.MONTH)) + 
-					" " + calendar.get(Calendar.YEAR) + " p.");
+			int year = Integer.parseInt(request.getParameter("year"));
+			int month = Integer.parseInt(request.getParameter("month"));
+			LocalDate date = LocalDate.of(year, month + 1, 1).minusDays(1);
+
+			report.setParameter("prCurMonth", "За " + Common4rest.getCurrentMonth(date.getMonthValue() - 1) + 
+					" " + date.getYear() + " p.");
 			report.setParameter("prName", Common4rest.nameAddress(user));
+			
 			profile.forEach(p -> {
 				try {
 					int idService = Integer.parseInt(p.get("IDSERVICE").toString());
 					report.setParameter("prOwnerAccount_" + idService,  p.get("OWNERACCOUNT").toString());
-					double tarif = Common4rest.getTarif(dao.getTarif(), calendar.get(Calendar.MONTH) + 1, idService);
+					double tarif = Common4rest.getTarif(dao.getTarif(), date.getMonthValue(), idService);
 					report.setParameter("prTarif_" + idService, tarif);
-					List<Map<String, Object>> data = dao.getData(idService, new Timestamp(calendar.getTimeInMillis()));
-					report.setParameter("prDataEnd_" + idService, data.get(0).get("VALUE"));
-					report.setParameter("prDataBeg_" + idService, data.get(1).get("VALUE"));
+					Map<String, Object> dataBeg = dao.getData(idService, Timestamp.valueOf(date.minusMonths(1).atStartOfDay()));
+					Map<String, Object> dataEnd = dao.getData(idService, Timestamp.valueOf(date.atTime(23, 59)));
+					if(dataBeg.size() > 0 && dataEnd.size() > 0) {
+						report.setParameter("prDataEnd_" + idService, dataEnd.get("VALUE"));
+						report.setParameter("prDataBeg_" + idService, dataBeg.get("VALUE"));
+					} else {
+						log.warn("Data is empty in report " + dataBeg.size());
+					}
 				} catch (Exception e) {
 					log.error("Report cann't create");
+					e.printStackTrace();
 				}
 			});
 			return  report.create("./static/reports", "Water", "pdf").toByteArray();

@@ -88,8 +88,8 @@ public interface IMapper {
 	@Select("select * from tarif where dtend is null;")
 	List<Map<String, Object>> getTarif();
 	
-	@Select("select * from data where idservice = #{idservice} and date < #{date} order by date desc limit 2;")
-	List<Map<String, Object>> getData(@Param("idservice") int idservice, @Param("date") Timestamp date);
+	@Select("select * from data where idservice = #{idservice} and date < #{date} order by date desc limit 1;")
+	Map<String, Object> getData(@Param("idservice") int idservice, @Param("date") Timestamp date);
 	
 	@Select("select * from data where idservice = #{idservice} and "
 			+ "date between #{dtBeg} and #{dtEnd} order by date desc;")

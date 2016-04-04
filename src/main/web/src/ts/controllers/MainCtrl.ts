@@ -11,7 +11,7 @@ module monitor.controllers {
 		private src: any;
 
 		constructor(dataService: DataService,
-								$scope, $location: ng.ILocationService,
+								$scope,
 								private $sce: ng.ISCEService,
 								private $http: ng.IHttpService,
 								private authService: AuthService) {
@@ -24,7 +24,13 @@ module monitor.controllers {
 		}
 
 		report(){
-			this.$http.get('/secureresources/report', { responseType: 'arraybuffer' })
+			this.$http.get('/secureresources/report', {
+				responseType: 'arraybuffer',
+				params: {
+					month: new Date().getMonth(),
+					year: new Date().getFullYear()
+				}
+			})
 				.success((response) => {
 					var file = new Blob([response], { type: 'application/pdf' });
 					var fileURL = URL.createObjectURL(file);

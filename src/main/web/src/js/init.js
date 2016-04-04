@@ -18,7 +18,7 @@
 ///<reference path="routeConfig.ts" />
 (function () {
     var ctrls = monitor.controllers, dirs = monitor.directives, servs = monitor.services;
-    var app = angular.module('Monitor', ['ngRoute', 'ngAnimate']);
+    var app = angular.module('Pays', ['ngRoute', 'ngAnimate']);
     app.config(monitor.RouteConfig)
         .run(function (authService, $rootScope, $route, translate, dataService) {
         authService.init('/', '/login', 'logout', 'registration');

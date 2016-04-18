@@ -61,12 +61,12 @@ public class DataBaseImpl implements IDataBase {
 			queries[11] = s -> s.getMapper(IMapper.class).insertProfile(1, 1, "129443");
 			queries[12] = s -> s.getMapper(IMapper.class).insertProfile(1, 2, "0800114010");
 			DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-			Date date1 = dateFormat.parse("11.02.2016");
-			queries[13] = s -> s.getMapper(IMapper.class).insertData(1, new Timestamp(date1.getTime()), 235);
-			Date date2 = dateFormat.parse("08.03.2016");
-			queries[14] = s -> s.getMapper(IMapper.class).insertData(1, new Timestamp(date2.getTime()), 241);
-			queries[15] = s -> s.getMapper(IMapper.class).insertData(2, new Timestamp(date1.getTime()), 3450);
-			queries[16] = s -> s.getMapper(IMapper.class).insertData(2, new Timestamp(date2.getTime()), 3465);
+			Date date1 = dateFormat.parse("08.03.2016");
+			queries[13] = s -> s.getMapper(IMapper.class).insertData(1, new Timestamp(date1.getTime()), 315);
+			Date date2 = dateFormat.parse("12.04.2016");
+			queries[14] = s -> s.getMapper(IMapper.class).insertData(1, new Timestamp(date2.getTime()), 325);
+			queries[15] = s -> s.getMapper(IMapper.class).insertData(2, new Timestamp(date1.getTime()), 4150);
+			queries[16] = s -> s.getMapper(IMapper.class).insertData(2, new Timestamp(date2.getTime()), 4225);
 			if(new BatisImpl(dataSource, queries).runCollection()) {
 				log.info("***************   create table user".toUpperCase());
 				log.info("***************   insert user (q / qwe)".toUpperCase());

@@ -63,8 +63,8 @@ public class SecureResources {
 					report.setParameter("prOwnerAccount_" + idService,  p.get("OWNERACCOUNT").toString());
 					double tarif = Common4rest.getTarif(dao.getTarif(), date.getMonthValue(), idService);
 					report.setParameter("prTarif_" + idService, tarif);
-					Map<String, Object> dataBeg = dao.getData(idService, Timestamp.valueOf(date.minusMonths(1).atStartOfDay()));
-					Map<String, Object> dataEnd = dao.getData(idService, Timestamp.valueOf(date.atTime(23, 59)));
+					Map<String, Object> dataBeg = dao.getData(idService, Timestamp.valueOf(date.atStartOfDay()));
+					Map<String, Object> dataEnd = dao.getData(idService, Timestamp.valueOf(date.plusMonths(1).atStartOfDay()));
 					if(dataBeg.size() > 0 && dataEnd.size() > 0) {
 						report.setParameter("prDataEnd_" + idService, dataEnd.get("VALUE"));
 						report.setParameter("prDataBeg_" + idService, dataBeg.get("VALUE"));

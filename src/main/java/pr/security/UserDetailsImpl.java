@@ -1,4 +1,4 @@
-package pr.pays.security;
+package pr.security;
 
 import java.util.Collection;
 
@@ -6,16 +6,16 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import pr.pays.model.User;
+import pr.security.model.User;
 
 public class UserDetailsImpl extends User implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private static final String ROLE_USER = "ROLE_USER";
 	
-	private User uw;
+	private User user;
 	
 	public UserDetailsImpl(User user) {
-		uw = user;
+		this.user = user;
 	}
 
 	@Override
@@ -25,12 +25,12 @@ public class UserDetailsImpl extends User implements UserDetails {
 
 	@Override
 	public String getPassword() {
-		return uw.getPassword();
+		return user.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		return uw.getLogin();
+		return user.getLogin();
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class UserDetailsImpl extends User implements UserDetails {
 
 	@Override
 	public boolean isAccountNonLocked() {
-		return !uw.isLocked();
+		return !user.isLocked();
 	}
 
 	@Override
@@ -50,6 +50,6 @@ public class UserDetailsImpl extends User implements UserDetails {
 
 	@Override
 	public boolean isEnabled() {
-		return uw.isActive();
+		return user.isActive();
 	}
 }

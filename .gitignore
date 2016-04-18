@@ -12,6 +12,7 @@ target
 **/dist
 src/main/resources/application.properties
 **/MyReports
+build
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

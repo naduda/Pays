@@ -17,14 +17,14 @@ module monitor.controllers {
 								private authService: AuthService) {
 			this.userName = dataService.login();
 
-			$http.get('/secureresources/profileInfo')
+			$http.get('saferesources/profile')
 			.success((data) => {
 				console.log(data);
 			});
 		}
 
 		report(){
-			this.$http.get('/secureresources/report', {
+			this.$http.get('secureresources/report', {
 				responseType: 'arraybuffer',
 				params: {
 					month: new Date().getMonth(),

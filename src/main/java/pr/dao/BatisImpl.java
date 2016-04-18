@@ -1,4 +1,4 @@
-package pr.pays.dao;
+package pr.dao;
 
 import javax.sql.DataSource;
 
@@ -7,14 +7,10 @@ import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import pr.pays.dao.mappers.IMapper;
-import pr.pays.dao.mappers.IMapperCreate;
 
 public class BatisImpl {
 	private static final Logger log = LoggerFactory.getLogger(BatisImpl.class);
@@ -25,30 +21,49 @@ public class BatisImpl {
 	private boolean isCommit = true;
 	private DataSource dataSource;
 	private SqlSession session;
+	private Configuration configuration;
 	
 	private SqlSessionFactory sqlSessionFactory;
 	
-	public BatisImpl(DataSource dataSource, IBatis iBatis) {
+	public BatisImpl(DataSource dataSource) {
 		this.dataSource = dataSource;
-		setMappers(dataSource);
+		setConfiguration(dataSource);
+	}
+	
+	private void clear() {
+		this.iCollection = null;
+		this.iBatis = null;
+	}
+	
+	public BatisImpl setIBatis(IBatis iBatis) {
+		clear();
 		this.iBatis = iBatis;
+		return this;
 	}
 	
-	public BatisImpl(DataSource dataSource, IBatis[] iCollection) {
-		this.dataSource = dataSource;
-		setMappers(dataSource);
+	public BatisImpl setIBatis(IBatis[] iCollection) {
+		clear();
 		this.iCollection = iCollection;
+		return this;
 	}
 	
-	private void setMappers(DataSource dataSource) {
+	public Configuration getConfiguration() {
+		return configuration;
+	}
+
+	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+		this.sqlSessionFactory = sqlSessionFactory;
+	}
+
+	private void setConfiguration(DataSource dataSource) {
 		if(dataSource != null) {
 			TransactionFactory transactionFactory = new JdbcTransactionFactory();
 			Environment environment = new Environment("development", transactionFactory, dataSource);
-			Configuration configuration = new Configuration(environment);
-			configuration.addMapper(IMapperCreate.class);
-			configuration.addMapper(IMapper.class);
+			configuration = new Configuration(environment);
+//			configuration.addMapper(IMapper.class);
+//			configuration.addMapper(IMapperCreate.class);
 			//configuration.addMappers("jdbc.mappers");
-			sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
+//			sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
 		}
 	}
 

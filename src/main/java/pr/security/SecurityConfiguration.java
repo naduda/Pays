@@ -1,4 +1,4 @@
-package pr.pays.security;
+package pr.security;
 
 import java.io.IOException;
 

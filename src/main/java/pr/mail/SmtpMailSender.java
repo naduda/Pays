@@ -1,4 +1,4 @@
-package pr.pays.mail;
+package pr.mail;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -23,7 +23,7 @@ public class SmtpMailSender {
 		helper.setTo(recipient);
 		helper.setText(body, true);
 		
-		log.info("Start sending...");
+		log.info("Start sending to " + recipient);
 		javaMailSender.send(message);
 		log.info("Sended!");
 	}

@@ -1,21 +1,15 @@
-package pr.pays.model;
+package pr.security.model;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
-public class User {
+public class User implements IUser {
 	private int id;
 	private String login;
 	private String password;
-	private String name;
-	private String middlename;
-	private String surname;
-	private String phone;
 	private String email;
-	private String address;
-	private int languageid;
 	private boolean active;
 	private int attempts;
 	private Timestamp lastmodified;
@@ -23,17 +17,32 @@ public class User {
 	
 	public User() {}
 	
-	public void setMaxAttempts(int maxAttempts) {
+	public User(String login, String password, String email, int maxAttempts) {
+		this.login = login;
+		this.password = password;
+		this.email = email;
 		this.maxAttempts = maxAttempts;
+		this.active = true;
+		this.attempts = 0;
+		this.lastmodified = Timestamp.valueOf(LocalDateTime.now());
 	}
 
 	@Override
 	public String toString() {
-		return login + " [psw = " + password + "]";
+		return "id = " + id + ", login = " + login + ", email = " + email;
 	}
 	
-	public boolean isLocked() {
-		return getAttempts() >= maxAttempts;
+	@Override
+	public Map<String, Object> toMap() {
+		Map<String, Object> ret = new HashMap<>();
+		ret.put("login", login);
+		ret.put("password", password);
+		ret.put("email", email);
+		ret.put("active", active);
+		ret.put("attempts", attempts);
+		ret.put("lastmodified", lastmodified);
+		ret.put("maxattempts", maxAttempts);
+		return ret;
 	}
 
 	public int getId() {
@@ -60,60 +69,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getMiddlename() {
-		return middlename;
-	}
-
-	public void setMiddlename(String middlename) {
-		this.middlename = middlename;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public int getLanguageid() {
-		return languageid;
-	}
-
-	public void setLanguageid(int languageid) {
-		this.languageid = languageid;
 	}
 
 	public boolean isActive() {
@@ -138,5 +99,18 @@ public class User {
 
 	public void setLastmodified(Timestamp lastmodified) {
 		this.lastmodified = lastmodified;
+	}
+
+	public int getMaxAttempts() {
+		return maxAttempts;
+	}
+
+	public void setMaxAttempts(int maxAttempts) {
+		this.maxAttempts = maxAttempts;
+	}
+
+	@Override
+	public boolean isLocked() {
+		return getAttempts() >= maxAttempts;
 	}
 }

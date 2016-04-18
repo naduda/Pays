@@ -12,14 +12,14 @@ var monitor;
                 this.$http = $http;
                 this.authService = authService;
                 this.userName = dataService.login();
-                $http.get('/secureresources/profileInfo')
+                $http.get('saferesources/profile')
                     .success(function (data) {
                     console.log(data);
                 });
             }
             MainCtrl.prototype.report = function () {
                 var _this = this;
-                this.$http.get('/secureresources/report', {
+                this.$http.get('secureresources/report', {
                     responseType: 'arraybuffer',
                     params: {
                         month: new Date().getMonth(),

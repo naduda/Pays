@@ -1,4 +1,4 @@
-package pr.pays.dao;
+package pr.dao;
 
 import java.rmi.RemoteException;
 import org.apache.ibatis.session.SqlSession;

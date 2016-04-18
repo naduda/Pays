@@ -1,21 +1,18 @@
 package pr.pays.rest;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
-import pr.pays.model.User;
-
-public class Common4rest {
-	private static final Logger log = LoggerFactory.getLogger(Common4rest.class);
-			
-	public static String notNull(String s) {
-		if(s == null) return ""; else return s;
-	}
+@Component("RestTools")
+public class RestTools {
+	private static final Logger log = LoggerFactory.getLogger(RestTools.class);
 	
-	public static String getCurrentMonth(int month) {
+	public String getCurrentMonth(int month) {
 		String ret = null;
 		switch (month) {
 		case 0: ret = "січень"; break;
@@ -34,7 +31,7 @@ public class Common4rest {
 		return ret;
 	}
 	
-	public static double getTarif(List<Map<String, Object>> input, int month, int idservice) {
+	public double getTarif(List<Map<String, Object>> input, int month, int idservice) {
 		double ret = 0;
 		try {
 			ret = (double) input.stream().filter(f -> {
@@ -63,7 +60,10 @@ public class Common4rest {
 		return ret;
 	}
 	
-	public static String nameAddress(User u) {
-		return u.getSurname() + " " + u.getName() + " " + u.getMiddlename() + ", " + u.getAddress();
+	public String nameAddress(Map<String, Object> user) {
+		Map<String, Object> u = new HashMap<>();
+		user.keySet().forEach(k -> u.put(k.toLowerCase(), user.get(k)));
+		return u.get("surname") + " " + u.get("name") + " " + u.get("middlename") +
+				", " + u.get("address");
 	}
 }

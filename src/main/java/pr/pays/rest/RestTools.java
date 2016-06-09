@@ -53,7 +53,7 @@ public class RestTools {
 				} else isInDate = true;
 				return isInDate;
 			}).findFirst().get().get("VALUE");
-		} catch (NumberFormatException e) {
+		} catch (Exception e) {
 			log.error("Cann't find actual tarif (month = " + month + ", idservice = " + idservice + ")");
 		}
 		
